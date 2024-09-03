@@ -1,0 +1,21 @@
+ion-item {
+    --padding-start: 10px;
+    --padding-end: 10px;
+    margin-bottom: 10px;
+}
+
+ion-thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+ion-label h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+ion-label p {
+    color: var(--ion-color-medium);
+}

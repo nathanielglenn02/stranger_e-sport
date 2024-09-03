@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './about.page.html',
   styleUrls: ['./about.page.scss'],
 })
-export class AboutPage implements OnInit {
+export class AboutPage {
+  likes: number = 0;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  likeTeam() {
+    this.likes += 1;
   }
-
 }

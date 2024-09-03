@@ -1,13 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>about</ion-title>
+    <ion-title>Who We Are</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">about</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <img src="assets/img/team-photo.jpg" alt="Team Photo" />
+    <ion-card-header>
+      <ion-card-title>Our E-Sports Team</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>We are a passionate e-sports team dedicated to excellence in gaming. Our strength lies in our teamwork,
+        strategy, and unwavering commitment to success.</p>
+      <p>Our vision is to become a leading name in the e-sports world, inspiring others with our gameplay and
+        sportsmanship.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" color="primary" (click)="likeTeam()">
+    <ion-icon slot="start" name="thumbs-up"></ion-icon>
+    Like
+  </ion-button>
+  <p>Likes: {{likes}}</p>
 </ion-content>
