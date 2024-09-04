@@ -31,7 +31,11 @@ const routes: Routes = [
   {
     path: 'our-schedule',
     loadChildren: () => import('./home/schedule/schedule.module').then(m => m.SchedulePageModule)
+  },  {
+    path: 'coba',
+    loadChildren: () => import('./coba/coba.module').then( m => m.CobaPageModule)
   },
+
 ];
 
 @NgModule({

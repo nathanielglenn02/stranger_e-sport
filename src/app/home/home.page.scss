@@ -26,7 +26,20 @@
   text-decoration: none;
 }
 
-ion-button {
-  margin: 20px;
-  background-color: #3880ff;
+// ion-button {
+//   margin: 20px;
+//   background-color: #3880ff;
+// }
+
+.icon-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--ion-color-primary);
 }
