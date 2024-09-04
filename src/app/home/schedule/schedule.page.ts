@@ -17,42 +17,63 @@ interface Event {
   styleUrls: ['./schedule.page.scss'],
 })
 export class SchedulePage implements OnInit {
-  events: Event[] = [
+  
+  events = [
     {
       id: 1,
-      title: 'Championship Final',
-      date: '2024-09-15',
-      time: '18:00',
-      image: 'assets/img/championship-final.jpg',
-      location: 'Stadium XYZ',
-      description: 'The grand final of the championship season.',
+      title: 'MPL XIV',
+      date: '8 Sept 2024',
+      time: '11:00 AM',  // Added time property
+      gameMode: 'Single Elimination',
+      platform: 'PC',
+      prize: '20,000 INR',
+      participants: '0 of 32',
+      image: 'assets/img/Schedule/mpl.jpg'
     },
     {
       id: 2,
-      title: 'Live Stream - Game Review',
-      date: '2024-09-22',
-      time: '15:00',
-      image: 'assets/img/live-stream.jpg',
-      location: 'Online - YouTube',
-      description: 'Join us for a live stream reviewing the latest games.',
+      title: 'M6 MLBB',
+      date: '8 Sept 2024',
+      time: '11:00 AM',  // Added time property
+      gameMode: 'Single Elimination',
+      platform: 'PC',
+      prize: '25,000 INR',
+      participants: '0 of 32',
+      image: 'assets/img/Schedule/m6.jpg'
     },
     {
       id: 3,
-      title: 'E-Sports Workshop',
-      date: '2024-10-05',
-      time: '09:00',
-      image: 'assets/img/workshop.jpg',
-      location: 'Conference Hall ABC',
-      description: 'A workshop for aspiring e-sports athletes.',
+      title: 'Valorant Champions Tour (VCT) 2024',
+      date: '8 Sept 2024',
+      time: '11:00 AM',  // Added time property
+      gameMode: 'Single Elimination',
+      platform: 'PC',
+      prize: '25,000 INR',
+      participants: '0 of 30',
+      image: 'assets/img/Schedule/valochamp.jpg'
     },
-    // Tambahkan acara lainnya sesuai kebutuhan
+    {
+      id: 4,
+      title: 'Clash of Clans World Championship 2024',
+      date: '8 Sept 2024',
+      time: '11:00 AM',  // Added time property
+      gameMode: 'Single Elimination',
+      platform: 'PC',
+      prize: '25,000 INR',
+      participants: '0 of 30',
+      image: 'assets/img/Schedule/cocwc.jpg'
+    }
+
   ];
 
-  constructor(private router: Router) { }
+  constructor(private roter: Router) { }
 
   ngOnInit() { }
 
-  viewEventDetails(event: Event) {
-    this.router.navigate(['/schedule-detail', event.id]);
+  // Method to handle event item click
+  viewEventDetails(event: any) {
+    // This is where you could add logic to navigate to a detailed view page, for example:
+    console.log('Event details:', event);
+    // Example navigation: this.navCtrl.navigateForward(`/event-details/${event.id}`);
   }
 }

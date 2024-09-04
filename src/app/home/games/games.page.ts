@@ -12,24 +12,35 @@ interface Game {
   templateUrl: './games.page.html',
   styleUrls: ['./games.page.scss'],
 })
+
 export class GamesPage implements OnInit {
+  
   games: Game[] = [
     {
       id: 1,
-      name: 'League of Legends',
-      image: 'assets/img/league-of-legends.jpg',
+      name: 'Mobile Legends',
+      image: 'assets/img/Game/ml.jpg',
     },
     {
       id: 2,
-      name: 'Dota 2',
-      image: 'assets/img/dota-2.jpg',
+      name: 'PUBG',
+      image: 'assets/img/Game/pubg.jpg',
     },
     {
       id: 3,
       name: 'Valorant',
-      image: 'assets/img/valorant.jpg',
+      image: 'assets/img/Game/valorant.jpg',
     },
-    // Tambahkan permainan lainnya sesuai kebutuhan
+    {
+      id: 4,
+      name: 'Clash of Clans',
+      image: 'assets/img/Game/coc.jpg',
+    },
+    {
+      id: 5,
+      name: 'Honor of Kings',
+      image: 'assets/img/Game/hok.jpg',
+    },
   ];
 
   constructor(private router: Router) { }

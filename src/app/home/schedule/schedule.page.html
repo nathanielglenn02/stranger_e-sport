@@ -1,22 +1,40 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>schedule</ion-title>
+    <ion-title>Schedule</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let event of events" (click)="viewEventDetails(event)">
-      <ion-thumbnail slot="start">
-        <img [src]="event.image" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ event.title }}</h2>
-        <p>{{ event.date | date: 'mediumDate' }} - {{ event.time }}</p>
-      </ion-label>
+      <ion-card>
+        <img [src]="event.image" alt="{{ event.title }}" />
+        <ion-card-header>
+          <ion-card-subtitle>{{ event.date | date: 'mediumDate' }} - {{ event.time }}</ion-card-subtitle>
+          <ion-card-title>{{ event.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Game Mode: {{ event.gameMode }}</p>
+          <p>Platform: {{ event.platform }}</p>
+          <ion-chip color="success">
+            <ion-icon name="trophy-outline"></ion-icon>
+            <ion-label>{{ event.prize }}</ion-label>
+          </ion-chip>
+          <ion-chip color="warning">
+            <ion-icon name="people-outline"></ion-icon>
+            <ion-label>{{ event.participants }}</ion-label>
+          </ion-chip>
+          <ion-chip color="primary">
+            <ion-label>UPCOMING</ion-label>
+          </ion-chip>
+        </ion-card-content>
+        <ion-button expand="block" fill="solid" color="primary">
+          Notify Me
+        </ion-button>
+      </ion-card>
     </ion-item>
   </ion-list>
 </ion-content>

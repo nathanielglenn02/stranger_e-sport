@@ -6,18 +6,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Stranger</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="who-we-are" routerLink="about">
+      <ion-icon name="people-outline"></ion-icon>
+      <ion-label>Who We Are</ion-label>
+    </ion-tab-button>
 
+    <ion-tab-button tab="what-we-play" routerLink="games">
+      <ion-icon name="game-controller-outline"></ion-icon>
+      <ion-label>What We Play</ion-label>
+    </ion-tab-button>
 
-
-  <div id="container">
-    <ion-button expand="block" routerLink="games">What We Play</ion-button>
-    <ion-button expand="block" routerLink="about">Who We Are</ion-button>
-    <ion-button expand="block" routerLink="schedule">Our Schedule</ion-button>
-  </div>
-</ion-content>
+    <ion-tab-button tab="our-schedule" routerLink="schedule">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <ion-label>Schedule</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

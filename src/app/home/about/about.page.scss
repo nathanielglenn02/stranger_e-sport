@@ -16,10 +16,15 @@
   --green: #66dc17;
 }
 
+ion-content {
+  background-color: #FFF;
+}
+
 ion-card {
   margin: 20px;
   text-align: center;
   border-radius: 10px;
+  background-color: #FFF;
 }
 
 ion-card-title {

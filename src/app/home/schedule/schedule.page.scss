@@ -1,21 +1,16 @@
-ion-item {
-    --padding-start: 10px;
-    --padding-end: 10px;
-    margin-bottom: 10px;
-}
-
-ion-thumbnail {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-ion-label h2 {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-ion-label p {
-    color: var(--ion-color-medium);
-}
+ion-card {
+    margin: 10px;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    ion-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    ion-chip {
+      margin: 5px 0;
+    }
+  }  
