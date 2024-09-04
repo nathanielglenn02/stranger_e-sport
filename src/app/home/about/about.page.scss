@@ -19,6 +19,7 @@
 ion-card {
   margin: 20px;
   text-align: center;
+  border-radius: 10px;
 }
 
 ion-card-title {
@@ -38,4 +39,9 @@ img {
 
 ion-button {
   margin: 20px;
+}
+
+.foto-logo {
+  height: 20em;
+  width: 20em;
 }

@@ -1,21 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
     <ion-title>Who We Are</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <img src="assets/img/team-photo.jpg" alt="Team Photo" />
+
+    <img class="foto-logo" src="../../../assets/img/Ariel.JPG" alt="Foto Ariel" />
+
     <ion-card-header>
       <ion-card-title>Our E-Sports Team</ion-card-title>
     </ion-card-header>
+
     <ion-card-content>
       <p>We are a passionate e-sports team dedicated to excellence in gaming. Our strength lies in our teamwork,
         strategy, and unwavering commitment to success.</p>
       <p>Our vision is to become a leading name in the e-sports world, inspiring others with our gameplay and
         sportsmanship.</p>
     </ion-card-content>
+
   </ion-card>
 
   <ion-button expand="block" color="primary" (click)="likeTeam()">
