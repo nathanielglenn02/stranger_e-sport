@@ -32,11 +32,6 @@ const routes: Routes = [
     path: 'our-schedule',
     loadChildren: () => import('./home/schedule/schedule.module').then(m => m.SchedulePageModule)
   },
-  {
-    path: 'schedule-detail/:eventId',
-    loadChildren: () => import('./home/schedule/schedule-detail/schedule-detail.module').then(m => m.ScheduleDetailPageModule)
-  },
-
 ];
 
 @NgModule({
