@@ -1,16 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Informatic E-Sport
-    </ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="wrapper">
+    <ion-item lines="none">
+      <ion-label color="light">
+        <div>
+          <ion-icon name="locate-outline"></ion-icon>
+          <ion-text>Hello Stranger</ion-text>
+        </div>
+        <p>Informatics E-Sport</p>
+      </ion-label>
+
+      <ion-fab-button size="small">
+        <ion-icon name="notifications-outline" color="medium"></ion-icon>
+        <ion-badge>&#9679;</ion-badge>
+      </ion-fab-button>
+    </ion-item>
+
+    <ion-toolbar class="srchBar" mode="ios">
+      <ion-row>
+        <ion-col size="10">
+          <ion-searchbar placeholder="Search events"></ion-searchbar>
+        </ion-col>
+        <ion-col size="2">
+          <ion-fab-button size="small" color="light">
+            <ion-icon name="options-outline" color="medium"></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="tengah">
-  <ion-toolbar>
-    <ion-label>Schedule</ion-label>
-  </ion-toolbar>
-</ion-content>
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
