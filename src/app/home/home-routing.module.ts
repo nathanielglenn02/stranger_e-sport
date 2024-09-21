@@ -9,15 +9,15 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+    loadChildren: () => import('./about/about.module').then(m => m.AboutPageModule)
   },
   {
     path: 'games',
-    loadChildren: () => import('./games/games.module').then( m => m.GamesPageModule)
+    loadChildren: () => import('./games/games.module').then(m => m.GamesPageModule)
   },
   {
     path: 'schedule',
-    loadChildren: () => import('./schedule/schedule.module').then( m => m.SchedulePageModule)
+    loadChildren: () => import('./schedule/schedule.module').then(m => m.SchedulePageModule)
   }
 ];
 
@@ -25,4 +25,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class HomePageRoutingModule {}
+export class HomePageRoutingModule { }

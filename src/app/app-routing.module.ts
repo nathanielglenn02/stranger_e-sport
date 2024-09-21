@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
 
@@ -32,6 +32,11 @@ const routes: Routes = [
     path: 'our-schedule',
     loadChildren: () => import('./home/schedule/schedule.module').then(m => m.SchedulePageModule)
   },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomePageModule)
+  },
+
 ];
 
 @NgModule({
