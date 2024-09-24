@@ -23,57 +23,61 @@ export class SchedulePage implements OnInit {
       id: 1,
       title: 'MPL XIV',
       date: '8 Sept 2024',
-      time: '11:00 AM',  // Added time property
+      time: '11:00 AM',  
       gameMode: 'Single Elimination',
-      platform: 'PC',
-      prize: '20,000 INR',
-      participants: '0 of 32',
-      image: 'assets/img/Schedule/mpl.jpg'
+      platform: 'Mobile',
+      prize: '20,000 $',
+      participants: '8 of 32',
+      image: 'assets/img/Schedule/mpl.jpg',
+      location: '',
+      description: ''
     },
     {
       id: 2,
       title: 'M6 MLBB',
       date: '8 Sept 2024',
-      time: '11:00 AM',  // Added time property
+      time: '11:00 AM',
       gameMode: 'Single Elimination',
-      platform: 'PC',
-      prize: '25,000 INR',
-      participants: '0 of 32',
-      image: 'assets/img/Schedule/m6.jpg'
+      platform: 'Mobile',
+      prize: '25,000 $',
+      participants: '12 of 32',
+      image: 'assets/img/Schedule/m6.jpg',
+      location: '',
+      description: ''
     },
     {
       id: 3,
       title: 'Valorant Champions Tour (VCT) 2024',
       date: '8 Sept 2024',
-      time: '11:00 AM',  // Added time property
+      time: '11:00 AM',
       gameMode: 'Single Elimination',
       platform: 'PC',
-      prize: '25,000 INR',
-      participants: '0 of 30',
-      image: 'assets/img/Schedule/valochamp.jpg'
+      prize: '25,000 $',
+      participants: '18 of 30',
+      image: 'assets/img/Schedule/valochamp.jpg',
+      location: '',
+      description: ''
     },
     {
       id: 4,
       title: 'Clash of Clans World Championship 2024',
       date: '8 Sept 2024',
-      time: '11:00 AM',  // Added time property
+      time: '11:00 AM',
       gameMode: 'Single Elimination',
       platform: 'PC',
-      prize: '25,000 INR',
+      prize: '25,000 $',
       participants: '0 of 30',
-      image: 'assets/img/Schedule/cocwc.jpg'
+      image: 'assets/img/Schedule/cocwc.jpg',
+      location: '',
+      description: ''
     }
-
   ];
 
   constructor(private roter: Router) { }
 
   ngOnInit() { }
 
-  // Method to handle event item click
   viewEventDetails(event: any) {
-    // This is where you could add logic to navigate to a detailed view page, for example:
     console.log('Event details:', event);
-    // Example navigation: this.navCtrl.navigateForward(`/event-details/${event.id}`);
   }
 }

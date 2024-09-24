@@ -32,7 +32,7 @@ ion-header {
   background: var(--ion-color-light);
 
   ion-toolbar.wrapper {
-    --background: url('../../assets/img/imgs/backhome.png') no-repeat center center/cover;
+    --background: url('../../assets/img/home/header.png') no-repeat center center/cover;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 
@@ -55,13 +55,17 @@ ion-header {
           display: flex;
           align-items: center;
           justify-content: flex-start;
+          ion-text{
+            text-shadow: 2px 2px 4px var(--ion-color-black);
+          }
         }
 
         p {
           margin-top: 3px;
           font-size: 1.8rem;
-          color: #fff;
+          color: var(--ion-primary-color);
           font-weight: bold;
+          text-shadow: 2px 2px 4px var(--ion-color-black);
         }
       }
 
