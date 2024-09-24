@@ -15,7 +15,7 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-  color: #8c8c8c;
+  color: var(--ion-color-gray);
   margin: 0;
 }
 
@@ -70,7 +70,7 @@ ion-header {
       }
 
       ion-fab-button {
-        --background: #fff;
+        --background: var(--ion-color-light);
 
         ion-badge {
           color: var(--ion-color-primary);
@@ -88,7 +88,7 @@ ion-header {
 
     ion-toolbar.srchBar {
       ion-row {
-        background: #fff;
+        background: var(--ion-color-light);
         border-radius: 25px;
         margin: 5px 5px 8px 5px;
 
@@ -109,17 +109,17 @@ ion-header {
     ion-searchbar {
       padding: 0;
       --border-radius: 25px;
-      --background: #fff;
+      --background: var(--ion-color-light);
     }
   }
 }
 
 ion-tabs {
-  background: #fff;
+  background: var(--ion-color-light);
 
   ion-tab-bar {
     ion-tab-button {
-      background: rgb(245, 245, 245);
+      background: var(--ion-color-light);
     }
   }
 }
