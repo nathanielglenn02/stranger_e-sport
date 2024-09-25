@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { IonicSlides } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   constructor() { }
+  swiperModules = [IonicSlides];
   events = [
     {
       imgSrc: '../../assets/img/Home/thumbnail/mpl1.jpg',
@@ -29,6 +30,5 @@ export class HomePage {
       imgSrc: '../../assets/img/Home/thumbnail/pubg.jpg',
       title: 'VAMPIRE ESPORTS THE NEW KING OF SEA',
     }
-
   ];
 }
