@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { register } from 'swiper/element/bundle';
-
+import { Router } from '@angular/router';
 register();
 
 @Component({
@@ -9,5 +9,9 @@ register();
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() { }
+  constructor(private router: Router) {}
+
+  isWelcomePage(): boolean {
+    return this.router.url === '/welcome';
+  }
 }
