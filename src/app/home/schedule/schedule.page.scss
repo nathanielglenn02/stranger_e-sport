@@ -1,5 +1,5 @@
 ion-header {
-  background: var(--ion-color-light);
+  background: #fff;
 
   ion-toolbar.wrapper {
     --background: url('../../../assets/img/home/header2.png') no-repeat center center/cover;
@@ -26,9 +26,12 @@ ion-header {
           display: flex;
           align-items: center;
           justify-content: flex-start;
+          color: var(--ion-primary-color);
 
           ion-text {
             text-shadow: 2px 2px 4px var(--ion-color-black);
+
+
           }
         }
 
@@ -48,6 +51,10 @@ ion-content {
   --background: #fff;
   /* Background content putih */
   padding: 10px;
+
+  ion-item {
+    --background: #fff;
+  }
 }
 
 .event-card {

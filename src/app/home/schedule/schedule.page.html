@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-grid>
     <ion-item *ngFor="let event of events" lines="none" (click)="viewEventDetails(event)">
       <ion-card class="event-card">
         <ion-row>
@@ -46,5 +46,5 @@
         </ion-row>
       </ion-card>
     </ion-item>
-  </ion-list>
+  </ion-grid>
 </ion-content>
