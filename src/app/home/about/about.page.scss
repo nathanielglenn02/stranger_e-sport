@@ -1,19 +1,47 @@
-:root {
-  --poppins: 'Poppins', sans-serif;
-  --lato: 'Lato', sans-serif;
+ion-header {
+  background: var(--ion-color-light);
 
-  --light: #F9F9F9;
-  --blue: #3C91E6;
-  --light-blue: #CFE8FF;
-  --grey: #eee;
-  --dark-grey: #AAAAAA;
-  --dark: #342E37;
-  --red: #DB504A;
-  --yellow: #FFCE26;
-  --light-yellow: #FFF2C6;
-  --orange: #FD7238;
-  --light-orange: #FFE0D3;
-  --green: #66dc17;
+  ion-toolbar.wrapper {
+    --background: url('../../../assets/img/home/header2.png') no-repeat center center/cover;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    ion-item,
+    ion-toolbar.srchBar {
+      --background: transparent;
+
+    }
+
+    ion-item {
+      margin: 3.5vh 0;
+
+      ion-label {
+        font-size: 0.75rem;
+
+        ion-icon {
+          margin-right: 3px;
+        }
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          ion-text {
+            text-shadow: 2px 2px 4px var(--ion-color-black);
+          }
+        }
+
+        p {
+          margin-top: 3px;
+          font-size: 1.8rem;
+          color: var(--ion-primary-color);
+          font-weight: bold;
+          text-shadow: 2px 2px 4px var(--ion-color-black);
+        }
+      }
+    }
+  }
 }
 
 ion-content {
