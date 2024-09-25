@@ -1,3 +1,26 @@
+ion-header {
+  --background: var(--ion-color-soft-pink);
+  /* Latar belakang soft pink */
+}
+
+ion-toolbar {
+  --background: var(--ion-color-soft-pink);
+  /* Toolbar dengan warna soft pink */
+  --color: #ffffff;
+}
+
+ion-title {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+ion-content {
+  --background: #fff;
+  /* Background content putih */
+  padding: 10px;
+}
+
 .event-card {
   margin: 10px;
   border-radius: 16px;
