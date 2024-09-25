@@ -27,3 +27,9 @@
     --ion-color-gray: #8c8c8c;
     --ion-color-soft-pink: #f6c0bf;
 }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ion-background-color: var(--ion-color-soft-pink);
+    }
+}
