@@ -1,18 +1,47 @@
 ion-header {
-  --background: var(--ion-color-soft-pink);
-  /* Latar belakang soft pink */
-}
+  background: var(--ion-color-light);
 
-ion-toolbar {
-  --background: var(--ion-color-soft-pink);
-  /* Toolbar dengan warna soft pink */
-  --color: #ffffff;
-}
+  ion-toolbar.wrapper {
+    --background: url('../../../assets/img/home/header2.png') no-repeat center center/cover;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 
-ion-title {
-  text-align: center;
-  color: #ffffff;
-  font-weight: bold;
+    ion-item,
+    ion-toolbar.srchBar {
+      --background: transparent;
+
+    }
+
+    ion-item {
+      margin: 3.5vh 0;
+
+      ion-label {
+        font-size: 0.75rem;
+
+        ion-icon {
+          margin-right: 3px;
+        }
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          ion-text {
+            text-shadow: 2px 2px 4px var(--ion-color-black);
+          }
+        }
+
+        p {
+          margin-top: 3px;
+          font-size: 1.8rem;
+          color: var(--ion-primary-color);
+          font-weight: bold;
+          text-shadow: 2px 2px 4px var(--ion-color-black);
+        }
+      }
+    }
+  }
 }
 
 ion-content {
