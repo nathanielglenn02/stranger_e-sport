@@ -22,14 +22,8 @@
     --ion-color-tertiary-shade: #ad1bcc;
     --ion-color-tertiary-tint: #cb35ea;
 
-    --ion-color-light: #fff;
+    --ion-color-white: #fff;
     --ion-color-black: #000;
     --ion-color-gray: #8c8c8c;
     --ion-color-soft-pink: #f6c0bf;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --ion-background-color: var(--ion-color-soft-pink);
-    }
 }
