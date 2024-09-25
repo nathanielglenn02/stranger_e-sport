@@ -17,13 +17,13 @@ interface Event {
   styleUrls: ['./schedule.page.scss'],
 })
 export class SchedulePage implements OnInit {
-  
+
   events = [
     {
       id: 1,
       title: 'MPL XIV',
-      date: '8 Sept 2024',
-      time: '11:00 AM',  
+      date: '9 Sept 2024',
+      time: '11:00 AM',
       gameMode: 'Single Elimination',
       platform: 'Mobile',
       prize: '20,000 $',
