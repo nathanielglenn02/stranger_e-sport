@@ -28,6 +28,24 @@ ion-button {
   background-color: #3880ff;
 }
 
+// 
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.event-card {
+  flex: 0 0 auto; 
+  margin-right: 10px;
+  width: 250px; 
+}
+
+ion-card .event{
+  width: 100%; 
+}
+
+
 ion-header {
   background: var(--ion-color-light);
 
