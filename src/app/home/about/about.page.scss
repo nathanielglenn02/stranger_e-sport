@@ -1,5 +1,5 @@
 ion-header {
-  background: #fff;
+  --background: var(--ion-primary-color);
 
   ion-toolbar.wrapper {
     --background: url('../../../assets/img/home/header2.png') no-repeat center center/cover;
@@ -13,7 +13,7 @@ ion-header {
     }
 
     ion-item {
-      margin: 3.5vh 0;
+      //margin: 3.5vh 0;
 
       ion-label {
         font-size: 0.75rem;
@@ -30,6 +30,8 @@ ion-header {
 
           ion-text {
             text-shadow: 2px 2px 4px var(--ion-color-black);
+
+
           }
         }
 
