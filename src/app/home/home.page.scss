@@ -116,8 +116,8 @@ ion-header {
     }
 
     ion-item {
-      //margin: 3.5vh 0;
 
+      //margin: 3.5vh 0;
       ion-label {
         font-size: 0.75rem;
 
@@ -136,6 +136,12 @@ ion-header {
 
 
           }
+        }
+
+        div .profil {
+          width: auto;
+          height: auto;
+          position: relative;
         }
 
         p {
