@@ -48,7 +48,8 @@ ion-header {
 }
 
 ion-content {
-  background-color: #FFF;
+  --background-color: var(--ion-primary-color);
+
 }
 
 ion-card {
@@ -73,9 +74,6 @@ img {
   border-radius: 10px;
 }
 
-ion-button {
-  margin: 20px;
-}
 
 .foto-logo {
   height: 20em;
