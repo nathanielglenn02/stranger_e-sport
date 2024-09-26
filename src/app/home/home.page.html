@@ -16,39 +16,35 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header class="trending">
-      <ion-card-title>Trending This Week 🔥</ion-card-title>
-    </ion-card-header>
-    <ion-card-content class="trending">
-      <div class="horizontal-scroll">
-        <div class="trending-card" *ngFor="let ytb of ytbs" (click)="openLink(ytb.url)">
-          <ion-card>
-            <ion-img [src]="ytb.imgSrc"></ion-img>
-            <ion-card-content>
-              <ion-label><strong>{{ ytb.title }}</strong></ion-label>
-            </ion-card-content>
-          </ion-card>
-        </div>
+  <ion-card-header class="trending">
+    <ion-card-title>Trending This Week 🔥</ion-card-title>
+  </ion-card-header>
+  <ion-card-content class="trending">
+    <div class="horizontal-scroll">
+      <div class="trending-card" *ngFor="let ytb of ytbs" (click)="openLink(ytb.url)">
+        <ion-card>
+          <ion-img [src]="ytb.imgSrc"></ion-img>
+          <ion-card-content>
+            <ion-label><strong>{{ ytb.title }}</strong></ion-label>
+          </ion-card-content>
+        </ion-card>
       </div>
-    </ion-card-content>
-  </ion-card>
+    </div>
+  </ion-card-content>
 
-  <ion-card>
-    <ion-card-header class="event">
-      <ion-card-title>Event</ion-card-title>
-    </ion-card-header>
-    <ion-card-content class="event">
-      <div class="horizontal-scroll">
-        <div class="event-card" *ngFor="let evt of evts">
-          <ion-card>
-            <ion-img [src]="evt.imgSrc" routerLink="schedule"></ion-img>
-            <ion-card-content>
-              <ion-label><strong>{{ evt.title }}</strong></ion-label>
-            </ion-card-content>
-          </ion-card>
-        </div>
+  <ion-card-header class="event">
+    <ion-card-title>Event</ion-card-title>
+  </ion-card-header>
+  <ion-card-content class="event">
+    <div class="horizontal-scroll">
+      <div class="event-card" *ngFor="let evt of evts">
+        <ion-card>
+          <ion-img [src]="evt.imgSrc" routerLink="schedule"></ion-img>
+          <ion-card-content>
+            <ion-label><strong>{{ evt.title }}</strong></ion-label>
+          </ion-card-content>
+        </ion-card>
       </div>
-    </ion-card-content>
-  </ion-card>
+    </div>
+  </ion-card-content>
 </ion-content>

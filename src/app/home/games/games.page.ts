@@ -19,27 +19,27 @@ export class GamesPage implements OnInit {
     {
       id: 1,
       name: 'Mobile Legends',
-      image: 'assets/img/Game/ml.jpg',
+      image: 'assets/img/game/ml.jpg',
     },
     {
       id: 2,
       name: 'PUBG',
-      image: 'assets/img/Game/pubg.jpg',
+      image: 'assets/img/game/pubg.jpg',
     },
     {
       id: 3,
       name: 'Valorant',
-      image: 'assets/img/Game/valorant.jpg',
+      image: 'assets/img/game/valorant.jpg',
     },
     {
       id: 4,
       name: 'Clash of Clans',
-      image: 'assets/img/Game/coc.jpg',
+      image: 'assets/img/game/coc.jpg',
     },
     {
       id: 5,
       name: 'Honor of Kings',
-      image: 'assets/img/Game/hok.jpg',
+      image: 'assets/img/game/hok.jpg',
     },
   ];
 

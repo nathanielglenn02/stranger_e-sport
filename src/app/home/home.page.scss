@@ -22,6 +22,57 @@
 #container a {
   text-decoration: none;
 }
+ion-header {
+  --background: var(--ion-primary-color);
+
+  ion-toolbar.wrapper {
+    --background: url('../../assets/img/home/header2.png') no-repeat center center/cover;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    ion-item,
+    ion-toolbar.srchBar {
+      --background: transparent;
+    }
+
+    ion-item {
+      ion-label {
+        font-size: 0.75rem;
+
+        ion-icon {
+          margin-right: 3px;
+        }
+
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          color: var(--ion-primary-color);
+
+          ion-text {
+            text-shadow: 2px 2px 4px var(--ion-color-black);
+
+
+          }
+        }
+
+        div .profil {
+          width: auto;
+          height: auto;
+          position: relative;
+        }
+
+        p {
+          margin-top: 3px;
+          font-size: 1.8rem;
+          color: var(--ion-primary-color);
+          font-weight: bold;
+          text-shadow: 2px 2px 4px var(--ion-color-black);
+        }
+      }
+    }
+  }
+}
 
 ion-button {
   margin: 20px;
@@ -96,66 +147,6 @@ ion-button {
   }
 }
 
-
-
-
-
-
-ion-header {
-  --background: var(--ion-primary-color);
-
-  ion-toolbar.wrapper {
-    --background: url('../../assets/img/home/header2.png') no-repeat center center/cover;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-
-    ion-item,
-    ion-toolbar.srchBar {
-      --background: transparent;
-
-    }
-
-    ion-item {
-
-      //margin: 3.5vh 0;
-      ion-label {
-        font-size: 0.75rem;
-
-        ion-icon {
-          margin-right: 3px;
-        }
-
-        div {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          color: var(--ion-primary-color);
-
-          ion-text {
-            text-shadow: 2px 2px 4px var(--ion-color-black);
-
-
-          }
-        }
-
-        div .profil {
-          width: auto;
-          height: auto;
-          position: relative;
-        }
-
-        p {
-          margin-top: 3px;
-          font-size: 1.8rem;
-          color: var(--ion-primary-color);
-          font-weight: bold;
-          text-shadow: 2px 2px 4px var(--ion-color-black);
-        }
-      }
-    }
-  }
-}
-
 ion-content {
   ion-card {
     --background: var(--ion-primary-color);
@@ -170,10 +161,6 @@ ion-content {
       ion-card-title {
         --color: var(--ion-color-black);
       }
-
     }
   }
-
-
-
 }

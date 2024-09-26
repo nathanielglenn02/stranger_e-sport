@@ -28,7 +28,7 @@ export class SchedulePage implements OnInit {
       platform: 'Mobile',
       prize: '20,000 $',
       participants: '8 of 32',
-      image: 'assets/img/Schedule/mpl.jpg',
+      image: 'assets/img/schedule/mpl.jpg',
       location: '',
       description: ''
     },
@@ -41,7 +41,7 @@ export class SchedulePage implements OnInit {
       platform: 'Mobile',
       prize: '25,000 $',
       participants: '12 of 32',
-      image: 'assets/img/Schedule/m6.jpg',
+      image: 'assets/img/schedule/m6.jpg',
       location: '',
       description: ''
     },
@@ -54,7 +54,7 @@ export class SchedulePage implements OnInit {
       platform: 'PC',
       prize: '25,000 $',
       participants: '18 of 30',
-      image: 'assets/img/Schedule/valochamp.jpg',
+      image: 'assets/img/schedule/valochamp.jpg',
       location: '',
       description: ''
     },
@@ -67,7 +67,7 @@ export class SchedulePage implements OnInit {
       platform: 'PC',
       prize: '25,000 $',
       participants: '0 of 30',
-      image: 'assets/img/Schedule/cocwc.jpg',
+      image: 'assets/img/schedule/cocwc.jpg',
       location: '',
       description: ''
     }
