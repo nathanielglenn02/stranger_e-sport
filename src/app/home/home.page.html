@@ -32,21 +32,21 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card-header class="event">
+  <ion-card-header class="trending">
     <ion-card-title>Trending This Week 🔥</ion-card-title>
   </ion-card-header>
-  <ion-card-content class="event">
+  <ion-card-content class="trending">
     <div class="horizontal-scroll">
-      <div class="event-card" *ngFor="let event of events">
+      <div class="event-card" *ngFor="let ytb of ytbs" (click)="openLink(ytb.url)">
         <ion-card>
-          <ion-img [src]="event.imgSrc"></ion-img>
+          <ion-img [src]="ytb.imgSrc"></ion-img>
           <ion-card-content>
-            <ion-label><strong>{{ event.title }}</strong></ion-label>
+            <ion-label><strong>{{ ytb.title }}</strong></ion-label>
           </ion-card-content>
         </ion-card>
       </div>
     </div>
-  </ion-card-content>  
+  </ion-card-content>
 
   <ion-card>
     <ion-card-header>
