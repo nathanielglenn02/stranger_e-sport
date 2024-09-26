@@ -1,23 +1,23 @@
 <ion-app>
   <ion-router-outlet>
-    <ion-tabs >
+    <ion-tabs>
       <ion-tab-bar slot="bottom" *ngIf="!isWelcomePage()">
-    
+
         <ion-tab-button tab="home" routerLink="home">
           <ion-icon name="home-outline"></ion-icon>
           <ion-label>Home</ion-label>
         </ion-tab-button>
-    
-        <ion-tab-button tab="who-we-are" routerLink="about">
+
+        <ion-tab-button tab="about" routerLink="about">
           <ion-icon name="people-outline"></ion-icon>
           <ion-label>Who We Are</ion-label>
         </ion-tab-button>
-    
-        <ion-tab-button tab="what-we-play" routerLink="games">
+
+        <ion-tab-button tab="games" routerLink="games">
           <ion-icon name="game-controller-outline"></ion-icon>
           <ion-label>What We Play</ion-label>
         </ion-tab-button>
-    
+
         <ion-tab-button tab="our-schedule" routerLink="schedule">
           <ion-icon name="calendar-outline"></ion-icon>
           <ion-label>Schedule</ion-label>
@@ -27,4 +27,3 @@
     </ion-tabs>
   </ion-router-outlet>
 </ion-app>
-
