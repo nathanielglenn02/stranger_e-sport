@@ -48,18 +48,18 @@ ion-header {
 }
 
 ion-content {
-  --background: #fff;
+  --background: var(--ion-primary-color);
   padding: 10px;
 
   ion-item {
-    --background: #fff;
+    --background: var(--ion-primary-color);
   }
 }
 
 .event-card {
   margin: 10px;
   border-radius: 16px;
-  box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
+  box-shadow: 3px 3px 3px black;
   background-color: #fff;
 
   img {
@@ -69,7 +69,7 @@ ion-content {
   }
 
   ion-card-header {
-    background-color: #fff;
+    --background-color: var(--ion-primary-color);
     border-radius: 0 0 16px 16px;
     padding: 16px;
   }
