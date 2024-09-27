@@ -1,5 +1,9 @@
 ion-header {
     --background: var(--ion-primary-color);
+    ion-buttons {
+        position: fixed;
+        color: #fff;
+      }
 
     ion-toolbar.wrapper {
         --background: url('../../../assets/img/home/header2.png') no-repeat center center/cover;

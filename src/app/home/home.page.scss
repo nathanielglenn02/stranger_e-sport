@@ -22,6 +22,7 @@
 #container a {
   text-decoration: none;
 }
+
 ion-header {
   --background: var(--ion-primary-color);
 
@@ -36,12 +37,9 @@ ion-header {
     }
 
     ion-item {
+      margin: 3.5vh 0;
       ion-label {
         font-size: 0.75rem;
-
-        ion-icon {
-          margin-right: 3px;
-        }
 
         div {
           display: flex;
@@ -51,15 +49,7 @@ ion-header {
 
           ion-text {
             text-shadow: 2px 2px 4px var(--ion-color-black);
-
-
           }
-        }
-
-        div .profil {
-          width: auto;
-          height: auto;
-          position: relative;
         }
 
         p {
@@ -70,6 +60,10 @@ ion-header {
           text-shadow: 2px 2px 4px var(--ion-color-black);
         }
       }
+    }
+    ion-img{
+      height: 50px;
+      width: 50px;
     }
   }
 }

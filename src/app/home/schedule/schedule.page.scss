@@ -1,5 +1,10 @@
 ion-header {
   --background: var(--ion-primary-color);
+  
+  ion-buttons {
+    position: fixed;
+    color: #fff;
+  }
 
   ion-toolbar.wrapper {
     --background: url('../../../assets/img/home/header2.png') no-repeat center center/cover;
@@ -13,7 +18,6 @@ ion-header {
     }
 
     ion-item {
-      //margin: 3.5vh 0;
 
       ion-label {
         font-size: 0.75rem;
