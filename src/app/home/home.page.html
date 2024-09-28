@@ -38,8 +38,8 @@
   <ion-card-content class="event">
     <div class="horizontal-scroll">
       <div class="event-card" *ngFor="let evt of evts">
-        <ion-card>
-          <ion-img [src]="evt.imgSrc" routerLink="schedule"></ion-img>
+        <ion-card routerLink="schedule">
+          <ion-img [src]="evt.imgSrc" ></ion-img>
           <ion-card-content>
             <ion-label><strong>{{ evt.title }}</strong></ion-label>
           </ion-card-content>
