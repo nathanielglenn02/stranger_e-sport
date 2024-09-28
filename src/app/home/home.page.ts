@@ -29,7 +29,6 @@ export class HomePage {
       title: 'EVENT HORIZON : SINGULARITY REVEAL TRAILER',
       url: 'https://youtu.be/Kwh4FtFgTCI?feature=shared'
     },
-
     {
       imgSrc: 'assets/img/home/thumbnail/hok.jpg',
       title: 'Arli - Memory Chip | Skin Showcase Video',
@@ -40,23 +39,19 @@ export class HomePage {
   evts = [
     {
       imgSrc: 'assets/img/schedule/mpl.jpg',
-      title: 'MPL XXIV - Single Elimination',
-      url: 'https://youtu.be/GDB7E8vwKR8?feature=shared'
+      title: 'MPL XXIV - Single Elimination'
     },
     {
       imgSrc: 'assets/img/schedule/m6.jpg',
-      title: 'M6 MLBB - Single Elimination',
-      url: 'https://youtu.be/6nYoiH4SaBA?feature=shared'
+      title: 'M6 MLBB - Single Elimination'
     },
     {
       imgSrc: 'assets/img/schedule/valochamp.jpg',
-      title: 'Valorant Champions Tour (VCT) 2024 - Single Elimination',
-      url: 'https://youtu.be/eQ2m_Pc3BkE?feature=shared'
+      title: 'Valorant Champions Tour (VCT) 2024 - Single Elimination'
     },
     {
       imgSrc: 'assets/img/schedule/cocwc.jpg',
-      title: 'Clash of Clans World Championship 2024 - Single Elimination',
-      url: 'https://youtu.be/Kwh4FtFgTCI?feature=shared'
+      title: 'Clash of Clans World Championship 2024 - Single Elimination'
     }
   ];
 

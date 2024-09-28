@@ -27,7 +27,8 @@ ion-header {
   --background: var(--ion-primary-color);
 
   ion-toolbar.wrapper {
-    --background: url('../../assets/img/home/header2.png') no-repeat center center/cover;
+    --background: url('../../assets/img/home/header2.png') 
+    no-repeat center center/cover;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 
