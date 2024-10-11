@@ -36,7 +36,7 @@ ion-header {
         p {
           margin-top: 3px;
           font-size: 1.8rem;
-          color: var(--ion-primary-color);
+          color: #fff;
           font-weight: bold;
           text-shadow: 2px 2px 4px var(--ion-color-black);
           text-align: center;
@@ -45,6 +45,7 @@ ion-header {
     }
   }
 }
+
 ion-buttons {
   position: fixed;
   color: #fff;
