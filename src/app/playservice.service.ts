@@ -39,7 +39,7 @@ export class PlayserviceService {
       teams: [
         {
           name: 'Team Alpha',
-          image: 'assets/img/team/team_alpha.jpg',
+          image: 'assets/img/game/ml.jpg',
           members: [
             { nickname: 'Player1', role: 'Duelist', avatar: 'assets/img/player/player1.jpg' },
             { nickname: 'Player2', role: 'Controller', avatar: 'assets/img/player/player2.jpg' },
@@ -50,7 +50,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team Bravo',
-          image: 'assets/img/team/team_bravo.jpg',
+          image: 'assets/img/game/ml.jpg',
           members: [
             { nickname: 'Player6', role: 'Duelist', avatar: 'assets/img/player/player6.jpg' },
             { nickname: 'Player7', role: 'Controller', avatar: 'assets/img/player/player7.jpg' },
@@ -61,7 +61,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team Charlie',
-          image: 'assets/img/team/team_charlie.jpg',
+          image: 'assets/img/game/ml.jpg',
           members: [
             { nickname: 'Player11', role: 'Duelist', avatar: 'assets/img/player/player11.jpg' },
             { nickname: 'Player12', role: 'Controller', avatar: 'assets/img/player/player12.jpg' },
@@ -84,7 +84,7 @@ export class PlayserviceService {
       teams: [
         {
           name: 'Team Delta',
-          image: 'assets/img/team/team_delta.jpg',
+          image: 'assets/img/game/pubg.jpg',
           members: [
             { nickname: 'Player16', role: 'Sniper', avatar: 'assets/img/player/player16.jpg' },
             { nickname: 'Player17', role: 'Support', avatar: 'assets/img/player/player17.jpg' },
@@ -95,7 +95,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team Echo',
-          image: 'assets/img/team/team_echo.jpg',
+          image: 'assets/img/game/pubg.jpg',
           members: [
             { nickname: 'Player21', role: 'Sniper', avatar: 'assets/img/player/player21.jpg' },
             { nickname: 'Player22', role: 'Support', avatar: 'assets/img/player/player22.jpg' },
@@ -106,7 +106,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team Foxtrot',
-          image: 'assets/img/team/team_foxtrot.jpg',
+          image: 'assets/img/game/pubg.jpg',
           members: [
             { nickname: 'Player26', role: 'Sniper', avatar: 'assets/img/player/player26.jpg' },
             { nickname: 'Player27', role: 'Support', avatar: 'assets/img/player/player27.jpg' },
@@ -129,7 +129,7 @@ export class PlayserviceService {
       teams: [
         {
           name: 'Team Zulu',
-          image: 'assets/img/team/team_zulu.jpg',
+          image: 'assets/img/game/valorant.jpg',
           members: [
             { nickname: 'ViperX', role: 'Controller', avatar: 'assets/img/player/viperx.jpg' },
             { nickname: 'BladeNova', role: 'Sentinel', avatar: 'assets/img/player/bladenova.jpg' },
@@ -140,7 +140,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team Tango',
-          image: 'assets/img/team/team_tango.jpg',
+          image: 'assets/img/game/valorant.jpg',
           members: [
             { nickname: 'Killjoy', role: 'Sentinel', avatar: 'assets/img/player/killjoy.jpg' },
             { nickname: 'Raze', role: 'Duelist', avatar: 'assets/img/player/raze.jpg' },
@@ -151,7 +151,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team Sierra',
-          image: 'assets/img/team/team_sierra.jpg',
+          image: 'assets/img/game/valorant.jpg',
           members: [
             { nickname: 'Omen', role: 'Controller', avatar: 'assets/img/player/omen.jpg' },
             { nickname: 'Brimstone', role: 'Sentinel', avatar: 'assets/img/player/brimstone.jpg' },
@@ -174,7 +174,7 @@ export class PlayserviceService {
       teams: [
         {
           name: 'Team India',
-          image: 'assets/img/team/team_india.jpg',
+          image: 'assets/img/game/coc.jpg',
           members: [
             { nickname: 'Chief1', role: 'Leader', avatar: 'assets/img/player/chief1.jpg' },
             { nickname: 'Chief2', role: 'Co-Leader', avatar: 'assets/img/player/chief2.jpg' },
@@ -185,7 +185,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team Juliet',
-          image: 'assets/img/team/team_juliet.jpg',
+          image: 'assets/img/game/coc.jpg',
           members: [
             { nickname: 'Chief6', role: 'Leader', avatar: 'assets/img/player/chief6.jpg' },
             { nickname: 'Chief7', role: 'Co-Leader', avatar: 'assets/img/player/chief7.jpg' },
@@ -196,7 +196,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team Kilo',
-          image: 'assets/img/team/team_kilo.jpg',
+          image: 'assets/img/game/coc.jpg',
           members: [
             { nickname: 'Chief11', role: 'Leader', avatar: 'assets/img/player/chief11.jpg' },
             { nickname: 'Chief12', role: 'Co-Leader', avatar: 'assets/img/player/chief12.jpg' },
@@ -219,7 +219,7 @@ export class PlayserviceService {
       teams: [
         {
           name: 'Team Lima',
-          image: 'assets/img/team/team_lima.jpg',
+          image: 'assets/img/game/hok.jpg',
           members: [
             { nickname: 'Hero1', role: 'Leader', avatar: 'assets/img/player/hero1.jpg' },
             { nickname: 'Hero2', role: 'Co-Leader', avatar: 'assets/img/player/hero2.jpg' },
@@ -230,7 +230,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team Mike',
-          image: 'assets/img/team/team_mike.jpg',
+          image: 'assets/img/game/hok.jpg',
           members: [
             { nickname: 'Hero6', role: 'Leader', avatar: 'assets/img/player/hero6.jpg' },
             { nickname: 'Hero7', role: 'Co-Leader', avatar: 'assets/img/player/hero7.jpg' },
@@ -241,7 +241,7 @@ export class PlayserviceService {
         },
         {
           name: 'Team November',
-          image: 'assets/img/team/team_november.jpg',
+          image: 'assets/img/game/hok.jpg',
           members: [
             { nickname: 'Hero11', role: 'Leader', avatar: 'assets/img/player/hero11.jpg' },
             { nickname: 'Hero12', role: 'Co-Leader', avatar: 'assets/img/player/hero12.jpg' },
@@ -262,6 +262,8 @@ export class PlayserviceService {
   getGames() {
     return this.games;
   }
+
+
 
   constructor() { }
 }

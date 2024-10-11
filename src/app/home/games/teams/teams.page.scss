@@ -51,3 +51,34 @@ ion-header {
         }
     }
 }
+
+ion-content {
+    --background: var(--ion-primary-color);
+    padding: 10px;
+
+    ion-item {
+        --background: var(--ion-primary-color);
+    }
+}
+
+.event-card {
+    margin: 10px;
+    border-radius: 16px;
+    box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
+    background-color: #fff;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px 16px 0 0;
+    }
+
+    ion-card-title {
+        font-size: 25px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+    }
+
+
+}
