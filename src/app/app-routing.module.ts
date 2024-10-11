@@ -36,6 +36,10 @@ const routes: Routes = [
     path: 'welcome',
     loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomePageModule)
   },
+  {
+    path: 'team-member/:gameIndex/:teamIndex',
+    loadChildren: () => import('./home/games/teams/team-member/team-member.module').then(m => m.TeamMemberPageModule)
+  },
 
 ];
 
