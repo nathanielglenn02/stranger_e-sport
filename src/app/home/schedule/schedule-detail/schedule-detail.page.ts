@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ScheduleserviceService, Schedule} from 'src/app/scheduleservice.service';
 
 @Component({
   selector: 'app-schedule-detail',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScheduleDetailPage implements OnInit {
 
-  constructor() { }
+  schedules:any[]=[];
+  index:number = 0
+
+  constructor(
+    private route: ActivatedRoute,
+    private scheduleservice : ScheduleserviceService
+  ) { }
+
 
   ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.index = params['index']
+    }
+  )
+    this.schedules= this.scheduleservice.schedules
+  }
+
+  notifyMe() {
+    alert('Notification created.');
   }
 
 }

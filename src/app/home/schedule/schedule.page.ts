@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ScheduleserviceService } from 'src/app/scheduleservice.service';
+
 
 interface Event {
   id: number;
@@ -16,68 +18,17 @@ interface Event {
   templateUrl: './schedule.page.html',
   styleUrls: ['./schedule.page.scss'],
 })
+
 export class SchedulePage implements OnInit {
 
-  events = [
-    {
-      id: 1,
-      title: 'MPL XIV',
-      date: '9 Sept 2024',
-      time: '11:00 AM',
-      gameMode: 'Single Elimination',
-      platform: 'Mobile',
-      prize: '20,000 $',
-      participants: '8 of 32',
-      image: 'assets/img/schedule/mpl.jpg',
-      location: '',
-      description: ''
-    },
-    {
-      id: 2,
-      title: 'M6 MLBB',
-      date: '8 Sept 2024',
-      time: '11:00 AM',
-      gameMode: 'Single Elimination',
-      platform: 'Mobile',
-      prize: '25,000 $',
-      participants: '12 of 32',
-      image: 'assets/img/schedule/m6.jpg',
-      location: '',
-      description: ''
-    },
-    {
-      id: 3,
-      title: 'Valorant Champions Tour (VCT) 2024',
-      date: '8 Sept 2024',
-      time: '11:00 AM',
-      gameMode: 'Single Elimination',
-      platform: 'PC',
-      prize: '25,000 $',
-      participants: '18 of 30',
-      image: 'assets/img/schedule/valochamp.jpg',
-      location: '',
-      description: ''
-    },
-    {
-      id: 4,
-      title: 'Clash of Clans World Championship 2024',
-      date: '8 Sept 2024',
-      time: '11:00 AM',
-      gameMode: 'Single Elimination',
-      platform: 'PC',
-      prize: '25,000 $',
-      participants: '0 of 30',
-      image: 'assets/img/schedule/cocwc.jpg',
-      location: '',
-      description: ''
-    }
-  ];
+  schedules:any[]=[]
+  constructor(private scheduleservice : ScheduleserviceService) { }
 
-  constructor(private roter: Router) { }
+  ngOnInit() { 
+    this.schedules= this.scheduleservice.schedules
+  }
 
-  ngOnInit() { }
-
-  viewEventDetails(event: any) {
-    console.log('Event details:', event);
+  viewScheduleDetails(schedule: any) {
+    console.log('Schedule :', schedule);
   }
 }

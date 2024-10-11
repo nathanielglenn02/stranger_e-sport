@@ -13,29 +13,29 @@
 
 <ion-content>
   <ion-grid>
-    <ion-item *ngFor="let event of events" lines="none" (click)="viewEventDetails(event)">
-      <ion-card class="event-card">
+    <ion-item *ngFor="let schedule of schedules; let i=index" lines="none" (click)="viewScheduleDetails(schedule)">
+      <ion-card class="schedule-card" routerLink="/schedule_detail/{{i}}">
         <ion-row>
           <ion-col size="12" class="image-col">
-            <img [src]="event.image" alt="{{ event.title }}" />
+            <img [src]="schedule.image" alt="{{ schedule.title }}" />
           </ion-col>
           <ion-col size="12">
             <ion-card-header>
               <ion-card-subtitle>
-                {{ event.date | date: 'mediumDate' }} - {{ event.time }}
+                {{ schedule.date | date: 'mediumDate' }} - {{ schedule.time }}
               </ion-card-subtitle>
-              <ion-card-title>{{ event.title }}</ion-card-title>
+              <ion-card-title>{{ schedule.title }}</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <p>Game Mode: {{ event.gameMode }}</p>
-              <p>Platform: {{ event.platform }}</p>
+              <p>Game Mode: {{ schedule.gameMode }}</p>
+              <p>Platform: {{ schedule.platform }}</p>
               <ion-chip color="success">
                 <ion-icon name="trophy-outline"></ion-icon>
-                <ion-label>{{ event.prize }}</ion-label>
+                <ion-label>{{ schedule.prize }}</ion-label>
               </ion-chip>
               <ion-chip color="warning">
                 <ion-icon name="people-outline"></ion-icon>
-                <ion-label>{{ event.participants }}</ion-label>
+                <ion-label>{{ schedule.participants }}</ion-label>
               </ion-chip>
               <ion-chip color="primary">
                 <ion-label>UPCOMING</ion-label>
