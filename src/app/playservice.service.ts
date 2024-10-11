@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 
-interface Member {
+export interface Member {
   nickname: string;
   role: string;
   avatar: string;
 }
 
-interface Team {
+export interface Team {
   name: string;
   image: string;
   members: Member[];
 }
 
-interface Achievement {
+export interface Achievement {
   title: string;
   date: string;
   image: string;
 }
 
-interface Game {
+export interface Game {
   id: number;
   name: string;
   image: string;
@@ -259,7 +259,9 @@ export class PlayserviceService {
     }
   ];
 
-
+  getGames() {
+    return this.games;
+  }
 
   constructor() { }
 }

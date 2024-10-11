@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayserviceService, Game, Member, Team, Achievement } from '../../../playservice.service';
 
 @Component({
   selector: 'app-teams',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamsPage implements OnInit {
 
-  constructor() { }
+  games: Game[] = [];
+  constructor(private playservice: PlayserviceService) { }
 
   ngOnInit() {
+    this.games = this.playservice.games;
   }
 
 }

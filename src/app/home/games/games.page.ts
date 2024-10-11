@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PlayserviceService, Game, Member, Team, Achievement } from '../../playservice.service';
 
-interface Game {
-  id: number;
-  name: string;
-  image: string;
-}
 
 @Component({
   selector: 'app-games',
@@ -14,38 +10,17 @@ interface Game {
 })
 
 export class GamesPage implements OnInit {
-  
-  games: Game[] = [
-    {
-      id: 1,
-      name: 'Mobile Legends',
-      image: 'assets/img/game/ml.jpg',
-    },
-    {
-      id: 2,
-      name: 'PUBG',
-      image: 'assets/img/game/pubg.jpg',
-    },
-    {
-      id: 3,
-      name: 'Valorant',
-      image: 'assets/img/game/valorant.jpg',
-    },
-    {
-      id: 4,
-      name: 'Clash of Clans',
-      image: 'assets/img/game/coc.jpg',
-    },
-    {
-      id: 5,
-      name: 'Honor of Kings',
-      image: 'assets/img/game/hok.jpg',
-    },
-  ];
 
-  constructor(private router: Router) { }
+  games: Game[] = [];
 
-  ngOnInit() { }
+  constructor(
+    private router: Router,
+    private playservice: PlayserviceService
+  ) { }
+
+  ngOnInit() {
+    this.games = this.playservice.games;
+  }
 
   viewAchievements(game: Game) {
     this.router.navigate(['/achievements', game.id]);

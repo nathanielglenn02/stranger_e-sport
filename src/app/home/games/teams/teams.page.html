@@ -1,16 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>teams</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="wrapper">
+    <ion-item lines="none">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/games"></ion-back-button>
+      </ion-buttons>
+      <ion-label color="light">
+        <p>Team</p>
+      </ion-label>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">teams</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
