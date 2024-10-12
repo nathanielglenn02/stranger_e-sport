@@ -1,0 +1,99 @@
+ion-header {
+    --background: var(--ion-primary-color);
+
+    ion-toolbar.wrapper {
+        --background: url('../../../../../assets/img/home/header2.png') no-repeat center center/cover;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+
+        ion-item,
+        ion-toolbar.srchBar {
+            --background: transparent;
+        }
+
+        ion-item {
+            margin: 3.5vh 0;
+
+            ion-label {
+                font-size: 0.75rem;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    color: var(--ion-primary-color);
+
+                    ion-text {
+                        text-shadow: 2px 2px 4px var(--ion-color-black);
+                        color: #fff;
+                    }
+                }
+
+                p {
+                    margin-top: 3px;
+                    font-size: 1.8rem;
+                    color: #fff;
+                    font-weight: bold;
+                    text-shadow: 2px 2px 4px var(--ion-color-black);
+                }
+            }
+        }
+
+        ion-img {
+            height: 50px;
+            width: 50px;
+        }
+    }
+}
+
+ion-content {
+    --background: var(--ion-primary-color);
+
+    ion-list {
+        --background: var(--ion-primary-color);
+
+        ion-content {
+            --background: var(--ion-primary-color);
+            padding: 10px;
+
+            ion-item {
+                --background: var(--ion-primary-color);
+
+                ion-card {
+                    --background: var(--ion-primary-color);
+
+                    ion-row {
+                        --background: var(--ion-primary-color);
+
+                        ion-col {
+                            --background: var(--ion-primary-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.event-card {
+    margin: 10px;
+    border-radius: 16px;
+    box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
+    background-color: #fff;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px 16px 0 0;
+    }
+
+    ion-card-title {
+        font-size: 25px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+    }
+
+
+}

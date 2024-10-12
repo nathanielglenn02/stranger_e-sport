@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayserviceService, Game} from '../../../playservice.service';
+import { ActivatedRoute  } from '@angular/router' ;
 
 @Component({
   selector: 'app-achievement',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AchievementPage implements OnInit {
 
-  constructor() { }
+  games:Game[]= [];
+  index:number = 0;
+  
+  selectedGame : Game | undefined;
+  constructor(private route: ActivatedRoute, private playService: PlayserviceService) { }
 
   ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.index = params['index']
+    })
+    this.games = this.playService.games;
+
+    this.selectedGame = this.games[this.index];
   }
 
 }

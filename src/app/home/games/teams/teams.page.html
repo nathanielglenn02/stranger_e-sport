@@ -10,3 +10,22 @@
     </ion-item>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-item *ngFor="let team of selectedGame?.teams; let i = index" lines="none">
+      <ion-card class="event-card" routerLink="/team-member/{{ i }}/{{ i }}">
+        <ion-row>
+          <ion-col size="12" class="image-col">
+            <img [src]="team?.image" alt="{{ team?.name }}" />
+          </ion-col>
+          <ion-col size="12">
+            <ion-card-header>
+              <ion-card-title>{{ team?.name }}</ion-card-title>
+            </ion-card-header>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-item>
+  </ion-grid>
+</ion-content>

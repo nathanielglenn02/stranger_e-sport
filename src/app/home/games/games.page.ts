@@ -12,6 +12,8 @@ import { PlayserviceService, Game, Member, Team, Achievement } from '../../plays
 export class GamesPage implements OnInit {
 
   games: Game[] = [];
+  index: number = 0;
+
 
   constructor(
     private router: Router,
@@ -22,11 +24,4 @@ export class GamesPage implements OnInit {
     this.games = this.playservice.games;
   }
 
-  viewAchievements(game: Game) {
-    this.router.navigate(['/achievements', game.id]);
-  }
-
-  viewTeams(game: Game) {
-    this.router.navigate(['/teams', game.id]);
-  }
 }
