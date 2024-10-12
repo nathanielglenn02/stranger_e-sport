@@ -14,12 +14,11 @@ export interface Team {
 
 export interface Achievement {
   title: string;
-  date: string;
-  image: string;
+  year: string;
+  team: string;
 }
 
 export interface Game {
-  id: number;
   name: string;
   image: string;
   teams: Team[];
@@ -33,231 +32,187 @@ export class PlayserviceService {
 
   games = [
     {
-      id: 1,
       name: 'Mobile Legends',
       image: 'assets/img/game/ml.jpg',
       teams: [
         {
-          name: 'Team Alpha',
-          image: 'assets/img/game/ml.jpg',
+          name: 'One Direction',
+          image: 'assets/img/game/team/team_ml_1_all.png',
           members: [
-            { nickname: 'Player1', role: 'Duelist', avatar: 'assets/img/Ariel.JPG' },
-            { nickname: 'Player2', role: 'Controller', avatar: 'assets/img/Ariel.JPG' },
-            { nickname: 'Player3', role: 'Sentinel', avatar: 'assets/img/Ariel.JPG' },
-            { nickname: 'Player4', role: 'Initiator', avatar: 'assets/img/Ariel.JPG' },
-            { nickname: 'Player5', role: 'Flex', avatar: 'assets/img/Ariel.JPG' },
+            { nickname: 'StormRider', role: 'Duelist', avatar: 'assets/img/game/team/player/team_ml_1_1.png' },
+            { nickname: 'SkyWatcher', role: 'Controller', avatar: 'assets/img/game/team/player/team_ml_1_2.png' },
+            { nickname: 'NightShade', role: 'Sentinel', avatar: 'assets/img/game/team/player/team_ml_1_3.png' },
+            { nickname: 'IronFist', role: 'Initiator', avatar: 'assets/img/game/team/player/team_ml_1_4.png' },
+            { nickname: 'GhostWalker', role: 'Flex', avatar: 'assets/img/game/team/player/team_ml_1_5.png' },
           ]
         },
         {
-          name: 'Team Bravo',
-          image: 'assets/img/game/ml.jpg',
+          name: 'Day6',
+          image: 'assets/img/game/team/team_ml_2_all.png',
           members: [
-            { nickname: 'Player6', role: 'Duelist', avatar: 'assets/img/player/player6.jpg' },
-            { nickname: 'Player7', role: 'Controller', avatar: 'assets/img/player/player7.jpg' },
-            { nickname: 'Player8', role: 'Sentinel', avatar: 'assets/img/player/player8.jpg' },
-            { nickname: 'Player9', role: 'Initiator', avatar: 'assets/img/player/player9.jpg' },
-            { nickname: 'Player10', role: 'Flex', avatar: 'assets/img/player/player10.jpg' },
+            { nickname: 'ThunderBolt', role: 'Duelist', avatar: 'assets/img/game/team/player/team_ml_2_1.png' },
+            { nickname: 'AquaGuard', role: 'Controller', avatar: 'assets/img/game/team/player/team_ml_2_2.png' },
+            { nickname: 'ShadowStalker', role: 'Sentinel', avatar: 'assets/img/game/team/player/team_ml_2_3.png' },
+            { nickname: 'BlazeWing', role: 'Initiator', avatar: 'assets/img/game/team/player/team_ml_2_4.png' },
+            { nickname: 'StormChaser', role: 'Flex', avatar: 'assets/img/game/team/player/team_ml_2_5.png' },
           ]
         },
         {
-          name: 'Team Charlie',
-          image: 'assets/img/game/ml.jpg',
+          name: 'Black Pink',
+          image: 'assets/img/game/team/team_ml_3_all.png',
           members: [
-            { nickname: 'Player11', role: 'Duelist', avatar: 'assets/img/player/player11.jpg' },
-            { nickname: 'Player12', role: 'Controller', avatar: 'assets/img/player/player12.jpg' },
-            { nickname: 'Player13', role: 'Sentinel', avatar: 'assets/img/player/player13.jpg' },
-            { nickname: 'Player14', role: 'Initiator', avatar: 'assets/img/player/player14.jpg' },
-            { nickname: 'Player15', role: 'Flex', avatar: 'assets/img/player/player15.jpg' },
+            { nickname: 'PhantomBlade', role: 'Duelist', avatar: 'assets/img/game/team/player/team_ml_3_1.png' },
+            { nickname: 'MoonShadow', role: 'Controller', avatar: 'assets/img/game/team/player/team_ml_3_2.png' },
+            { nickname: 'SilverArrow', role: 'Sentinel', avatar: 'assets/img/game/team/player/team_ml_3_3.png' },
+            { nickname: 'FrostGuard', role: 'Initiator', avatar: 'assets/img/game/team/player/team_ml_3_4.png' },
+            { nickname: 'SteelHeart', role: 'Flex', avatar: 'assets/img/game/team/player/team_ml_3_5.png' },
           ]
         },
       ],
       achievements: [
-        { title: 'Champion League Winner', date: '2023', image: 'assets/img/achievement/ml_1.jpg' },
-        { title: 'Best Team Play', date: '2022', image: 'assets/img/achievement/ml_2.jpg' },
-        { title: 'Most Valuable Player', date: '2021', image: 'assets/img/achievement/ml_3.jpg' },
+        { title: 'Champion League Winner', date: '2023', team: 'One Direction' },
+        { title: 'Best Team Play', date: '2022' , team: 'Day6'},
+        { title: 'Most Valuable Player', date: '2021' },
+        { title: 'International Invitational Champion', date: '2023', team: 'One Direction' },
+        { title: 'National Grand Finals', date: '2022', team: 'Day6' },
+        { title: 'Regional Qualifiers Winner', date: '2021', team: 'Black Pink' }
       ]
     },
     {
-      id: 2,
       name: 'PUBG',
       image: 'assets/img/game/pubg.jpg',
       teams: [
         {
-          name: 'Team Delta',
-          image: 'assets/img/game/pubg.jpg',
+          name: 'TXT',
+          image: 'assets/img/game/team/team_pubg_1_all.png',
           members: [
-            { nickname: 'Player16', role: 'Sniper', avatar: 'assets/img/player/player16.jpg' },
-            { nickname: 'Player17', role: 'Support', avatar: 'assets/img/player/player17.jpg' },
-            { nickname: 'Player18', role: 'Assault', avatar: 'assets/img/player/player18.jpg' },
-            { nickname: 'Player19', role: 'Scout', avatar: 'assets/img/player/player19.jpg' },
-            { nickname: 'Player20', role: 'Commander', avatar: 'assets/img/player/player20.jpg' },
+            { nickname: 'DeadEye', role: 'Sniper', avatar: 'assets/img/game/team/player/team_pubg_1_1.png' },
+            { nickname: 'IronHawk', role: 'Support', avatar: 'assets/img/game/team/player/team_pubg_1_2.png' },
+            { nickname: 'WarLord', role: 'Assault', avatar: 'assets/img/game/team/player/team_pubg_1_3.png' },
+            { nickname: 'FalconScout', role: 'Scout', avatar: 'assets/img/game/team/player/team_pubg_1_4.png' },
+            { nickname: 'StormCommander', role: 'Commander', avatar: 'assets/img/game/team/player/team_pubg_1_5.png' },
           ]
         },
         {
-          name: 'Team Echo',
-          image: 'assets/img/game/pubg.jpg',
+          name: 'OneWe',
+          image: 'assets/img/game/team/team_pubg_2_all.png',
           members: [
-            { nickname: 'Player21', role: 'Sniper', avatar: 'assets/img/player/player21.jpg' },
-            { nickname: 'Player22', role: 'Support', avatar: 'assets/img/player/player22.jpg' },
-            { nickname: 'Player23', role: 'Assault', avatar: 'assets/img/player/player23.jpg' },
-            { nickname: 'Player24', role: 'Scout', avatar: 'assets/img/player/player24.jpg' },
-            { nickname: 'Player25', role: 'Commander', avatar: 'assets/img/player/player25.jpg' },
-          ]
-        },
-        {
-          name: 'Team Foxtrot',
-          image: 'assets/img/game/pubg.jpg',
-          members: [
-            { nickname: 'Player26', role: 'Sniper', avatar: 'assets/img/player/player26.jpg' },
-            { nickname: 'Player27', role: 'Support', avatar: 'assets/img/player/player27.jpg' },
-            { nickname: 'Player28', role: 'Assault', avatar: 'assets/img/player/player28.jpg' },
-            { nickname: 'Player29', role: 'Scout', avatar: 'assets/img/player/player29.jpg' },
-            { nickname: 'Player30', role: 'Commander', avatar: 'assets/img/player/player30.jpg' },
+            { nickname: 'GhostSniper', role: 'Sniper', avatar: 'assets/img/game/team/player/team_pubg_2_1.png' },
+            { nickname: 'TitanGuard', role: 'Support', avatar: 'assets/img/game/team/player/team_pubg_2_2.png' },
+            { nickname: 'HellRaiser', role: 'Assault', avatar: 'assets/img/game/team/player/team_pubg_2_3.png' },
+            { nickname: 'RaptorWing', role: 'Scout', avatar: 'assets/img/game/team/player/team_pubg_2_4.png' },
+            { nickname: 'CrimsonCommander', role: 'Commander', avatar: 'assets/img/game/team/player/team_pubg_2_5.png' },
           ]
         },
       ],
       achievements: [
-        { title: 'PUBG World Cup Champion', date: '2023', image: 'assets/img/achievement/pubg_1.jpg' },
-        { title: 'Best Shooter Award', date: '2022', image: 'assets/img/achievement/pubg_2.jpg' },
-        { title: 'Team of the Year', date: '2021', image: 'assets/img/achievement/pubg_3.jpg' },
+        { title: 'PUBG World Cup Champion', date: '2023', team: 'TXT' },
+        { title: 'Best Shooter Award', date: '2022', team: 'OneWe' },
+        { title: 'Team of the Year', date: '2021' },
+        { title: 'Survivor Series Champion', date: '2023', team: 'TXT' },
+        { title: 'National Battle Royale Winner', date: '2022', team: 'OneWe' },
+        { title: 'Best Team Coordination', date: '2021', team: 'TXT' }
       ]
     },
     {
-      id: 3,
       name: 'Valorant',
       image: 'assets/img/game/valorant.jpg',
       teams: [
         {
-          name: 'Team Zulu',
-          image: 'assets/img/game/valorant.jpg',
+          name: 'Red Velvet',
+          image: 'assets/img/game/team/team_valo_1_all.png',
           members: [
-            { nickname: 'ViperX', role: 'Controller', avatar: 'assets/img/player/viperx.jpg' },
-            { nickname: 'BladeNova', role: 'Sentinel', avatar: 'assets/img/player/bladenova.jpg' },
-            { nickname: 'ShadowStrike', role: 'Duelist', avatar: 'assets/img/player/shadowstrike.jpg' },
-            { nickname: 'Phoenix', role: 'Initiator', avatar: 'assets/img/player/phoenix.jpg' },
-            { nickname: 'Sage', role: 'Flex', avatar: 'assets/img/player/sage.jpg' },
+            { nickname: 'ViperX', role: 'Controller', avatar: 'assets/img/game/team/player/team_valo_1_1.png' },
+            { nickname: 'BladeNova', role: 'Sentinel', avatar: 'assets/img/game/team/player/team_valo_1_2.png' },
+            { nickname: 'ShadowStrike', role: 'Duelist', avatar: 'assets/img/game/team/player/team_valo_1_3.png' },
+            { nickname: 'Phoenix', role: 'Initiator', avatar: 'assets/img/game/team/player/team_valo_1_4.png' },
+            { nickname: 'Sage', role: 'Flex', avatar: 'assets/img/game/team/player/team_valo_1_5.png' },
           ]
         },
         {
-          name: 'Team Tango',
-          image: 'assets/img/game/valorant.jpg',
+          name: 'Itzy',
+          image: 'assets/img/game/team/team_valo_2_all.png',
           members: [
-            { nickname: 'Killjoy', role: 'Sentinel', avatar: 'assets/img/player/killjoy.jpg' },
-            { nickname: 'Raze', role: 'Duelist', avatar: 'assets/img/player/raze.jpg' },
-            { nickname: 'Sova', role: 'Initiator', avatar: 'assets/img/player/sova.jpg' },
-            { nickname: 'Breach', role: 'Flex', avatar: 'assets/img/player/breach.jpg' },
-            { nickname: 'Jett', role: 'Duelist', avatar: 'assets/img/player/jett.jpg' },
-          ]
-        },
-        {
-          name: 'Team Sierra',
-          image: 'assets/img/game/valorant.jpg',
-          members: [
-            { nickname: 'Omen', role: 'Controller', avatar: 'assets/img/player/omen.jpg' },
-            { nickname: 'Brimstone', role: 'Sentinel', avatar: 'assets/img/player/brimstone.jpg' },
-            { nickname: 'Cypher', role: 'Sentinel', avatar: 'assets/img/player/cypher.jpg' },
-            { nickname: 'Reyna', role: 'Duelist', avatar: 'assets/img/player/reyna.jpg' },
-            { nickname: 'Yoru', role: 'Flex', avatar: 'assets/img/player/yoru.jpg' },
+            { nickname: 'Killjoy', role: 'Sentinel', avatar: 'assets/img/game/team/player/team_valo_2_1.png' },
+            { nickname: 'Raze', role: 'Duelist', avatar: 'assets/img/game/team/player/team_valo_2_2.png' },
+            { nickname: 'Sova', role: 'Initiator', avatar: 'assets/img/game/team/player/team_valo_2_3.png' },
+            { nickname: 'Breach', role: 'Flex', avatar: 'assets/img/game/team/player/team_valo_2_4.png' },
+            { nickname: 'Jett', role: 'Duelist', avatar: 'assets/img/game/team/player/team_valo_2_5.png' },
           ]
         },
       ],
       achievements: [
-        { title: 'Valorant Global Champions', date: '2023', image: 'assets/img/achievement/valorant_1.jpg' },
-        { title: 'Best Tactical Team', date: '2022', image: 'assets/img/achievement/valorant_2.jpg' },
-        { title: 'Rookie of the Year', date: '2021', image: 'assets/img/achievement/valorant_3.jpg' },
+        { title: 'Valorant Global Champions', date: '2023', team: 'Itzy'  },
+        { title: 'Best Tactical Team', date: '2022', team: 'Red Velvet' },
+        { title: 'Rookie of the Year', date: '2021', team: 'Red Velvet' },
+        { title: 'Valorant Masters Winner', date: '2023', team: 'Red Velvet' },
+        { title: 'Regional Showdown Champion', date: '2022', team: 'Itzy' },
+        { title: 'Best Team Strategy', date: '2021', team: 'Red Velvet' }
       ]
     },
     {
-      id: 4,
       name: 'Clash of Clans',
       image: 'assets/img/game/coc.jpg',
       teams: [
         {
-          name: 'Team India',
-          image: 'assets/img/game/coc.jpg',
+          name: 'Shinee',
+          image: 'assets/img/game/team/team_coc_1_all.png',
           members: [
-            { nickname: 'Chief1', role: 'Leader', avatar: 'assets/img/player/chief1.jpg' },
-            { nickname: 'Chief2', role: 'Co-Leader', avatar: 'assets/img/player/chief2.jpg' },
-            { nickname: 'Chief3', role: 'Elder', avatar: 'assets/img/player/chief3.jpg' },
-            { nickname: 'Chief4', role: 'Member', avatar: 'assets/img/player/chief4.jpg' },
-            { nickname: 'Chief5', role: 'Member', avatar: 'assets/img/player/chief5.jpg' },
+            { nickname: 'ChiefOne', role: 'Leader', avatar: 'assets/img/game/team/player/team_coc_1_1.png' },
+            { nickname: 'ChiefRogue', role: 'Co-Leader', avatar: 'assets/img/game/team/player/team_coc_1_2.png' },
+            { nickname: 'ChiefX', role: 'Elder', avatar: 'assets/img/game/team/player/team_coc_1_3.png' },
+            { nickname: 'ChiefFrost', role: 'Member', avatar: 'assets/img/game/team/player/team_coc_1_4.png' },
+            { nickname: 'ChiefBlaze', role: 'Member', avatar: 'assets/img/game/team/player/team_coc_1_5.png' },
           ]
         },
         {
-          name: 'Team Juliet',
-          image: 'assets/img/game/coc.jpg',
+          name: 'Le Sserafim',
+          image: 'assets/img/game/team/team_coc_2_all.png',
           members: [
-            { nickname: 'Chief6', role: 'Leader', avatar: 'assets/img/player/chief6.jpg' },
-            { nickname: 'Chief7', role: 'Co-Leader', avatar: 'assets/img/player/chief7.jpg' },
-            { nickname: 'Chief8', role: 'Elder', avatar: 'assets/img/player/chief8.jpg' },
-            { nickname: 'Chief9', role: 'Member', avatar: 'assets/img/player/chief9.jpg' },
-            { nickname: 'Chief10', role: 'Member', avatar: 'assets/img/player/chief10.jpg' },
-          ]
-        },
-        {
-          name: 'Team Kilo',
-          image: 'assets/img/game/coc.jpg',
-          members: [
-            { nickname: 'Chief11', role: 'Leader', avatar: 'assets/img/player/chief11.jpg' },
-            { nickname: 'Chief12', role: 'Co-Leader', avatar: 'assets/img/player/chief12.jpg' },
-            { nickname: 'Chief13', role: 'Elder', avatar: 'assets/img/player/chief13.jpg' },
-            { nickname: 'Chief14', role: 'Member', avatar: 'assets/img/player/chief14.jpg' },
-            { nickname: 'Chief15', role: 'Member', avatar: 'assets/img/player/chief15.jpg' },
+            { nickname: 'ChiefNova', role: 'Leader', avatar: 'assets/img/game/team/player/team_coc_2_1.png' },
+            { nickname: 'ChiefHunter', role: 'Co-Leader', avatar: 'assets/img/game/team/player/team_coc_2_2.png' },
+            { nickname: 'ChiefBlade', role: 'Elder', avatar: 'assets/img/game/team/player/team_coc_2_3.png' },
+            { nickname: 'ChiefShadow', role: 'Member', avatar: 'assets/img/game/team/player/team_coc_2_4.png' },
+            { nickname: 'ChiefStorm', role: 'Member', avatar: 'assets/img/game/team/player/team_coc_2_5.png' },
           ]
         },
       ],
       achievements: [
-        { title: 'Clash of Clans World Cup', date: '2023', image: 'assets/img/achievement/coc_1.jpg' },
-        { title: 'Best Clan of the Year', date: '2022', image: 'assets/img/achievement/coc_2.jpg' },
-        { title: 'Strategy Master Award', date: '2021', image: 'assets/img/achievement/coc_3.jpg' },
+        { title: 'Clash of Clans World Cup', date: '2023', team: 'Shinee' },
+        { title: 'Best Clan of the Year', date: '2022',  team: 'Le Sserafim' },
+        { title: 'Strategy Master Award', date: '2021', team: 'Shinee' },
+        { title: 'War of Clans Champion', date: '2023', team: 'Shinee' },
+        { title: 'Clan Battle Tournament Winner', date: '2022', team: 'Le Sserafim' },
+        { title: 'Best Clan Strategy', date: '2021', team: 'Shinee' }
       ]
     },
     {
-      id: 5,
       name: 'Honor of Kings',
       image: 'assets/img/game/hok.jpg',
       teams: [
         {
-          name: 'Team Lima',
-          image: 'assets/img/game/hok.jpg',
+          name: 'EXID',
+          image: 'assets/img/game/team/team_hok_1_all.png',
           members: [
-            { nickname: 'Hero1', role: 'Leader', avatar: 'assets/img/player/hero1.jpg' },
-            { nickname: 'Hero2', role: 'Co-Leader', avatar: 'assets/img/player/hero2.jpg' },
-            { nickname: 'Hero3', role: 'Elder', avatar: 'assets/img/player/hero3.jpg' },
-            { nickname: 'Hero4', role: 'Member', avatar: 'assets/img/player/hero4.jpg' },
-            { nickname: 'Hero5', role: 'Member', avatar: 'assets/img/player/hero5.jpg' },
-          ]
-        },
-        {
-          name: 'Team Mike',
-          image: 'assets/img/game/hok.jpg',
-          members: [
-            { nickname: 'Hero6', role: 'Leader', avatar: 'assets/img/player/hero6.jpg' },
-            { nickname: 'Hero7', role: 'Co-Leader', avatar: 'assets/img/player/hero7.jpg' },
-            { nickname: 'Hero8', role: 'Elder', avatar: 'assets/img/player/hero8.jpg' },
-            { nickname: 'Hero9', role: 'Member', avatar: 'assets/img/player/hero9.jpg' },
-            { nickname: 'Hero10', role: 'Member', avatar: 'assets/img/player/hero10.jpg' },
-          ]
-        },
-        {
-          name: 'Team November',
-          image: 'assets/img/game/hok.jpg',
-          members: [
-            { nickname: 'Hero11', role: 'Leader', avatar: 'assets/img/player/hero11.jpg' },
-            { nickname: 'Hero12', role: 'Co-Leader', avatar: 'assets/img/player/hero12.jpg' },
-            { nickname: 'Hero13', role: 'Elder', avatar: 'assets/img/player/hero13.jpg' },
-            { nickname: 'Hero14', role: 'Member', avatar: 'assets/img/player/hero14.jpg' },
-            { nickname: 'Hero15', role: 'Member', avatar: 'assets/img/player/hero15.jpg' },
+            { nickname: 'HeroX', role: 'Leader', avatar: 'assets/img/game/team/player/team_hok_1_1.png' },
+            { nickname: 'HeroNova', role: 'Co-Leader', avatar: 'assets/img/game/team/player/team_hok_1_2.png' },
+            { nickname: 'HeroBlade', role: 'Elder', avatar: 'assets/img/game/team/player/team_hok_1_3.png' },
+            { nickname: 'HeroStorm', role: 'Member', avatar: 'assets/img/game/team/player/team_hok_1_4.png' },
+            { nickname: 'HeroFury', role: 'Member', avatar: 'assets/img/game/team/player/team_hok_1_5.png' },
           ]
         },
       ],
       achievements: [
-        { title: 'Honor of Kings World Champion', date: '2023', image: 'assets/img/achievement/hok_1.jpg' },
-        { title: 'Best Team Coordination', date: '2022', image: 'assets/img/achievement/hok_2.jpg' },
-        { title: 'King of the Arena', date: '2021', image: 'assets/img/achievement/hok_3.jpg' },
+        { title: 'Honor of Kings Champion', date: '2023', team: 'EXID' },
+        { title: 'Most Strategic Team', date: '2022', team: 'EXID' },
+        { title: 'Player of the Year', date: '2021', team: 'EXID' },
+        { title: 'Honor of Kings World Cup Winner', date: '2023', team: 'EXID' },
+        { title: 'Regional Masters Champion', date: '2022', team: 'EXID' },
+        { title: 'Best Team Coordination Award', date: '2021', team: 'EXID' }
       ]
-    }
+    },
   ];
+
 
   getGames() {
     return this.games;
