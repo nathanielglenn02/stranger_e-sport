@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PlayserviceService, Game, Member, Team, Achievement } from '../../playservice.service';
+import { PlayserviceService, Game } from '../../playservice.service';
 
 
 @Component({

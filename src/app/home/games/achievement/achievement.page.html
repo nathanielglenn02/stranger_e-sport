@@ -7,15 +7,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <ion-grid>
 
     <ion-card>
-      <img [src]="selectedGame?.image"/>
-      <ion-item *ngFor="let achievement of selectedGame?.achievements" lines="none">
-        <ion-label>- {{ achievement.title}} - {{ achievement.date}}</ion-label>
-      </ion-item>
-    </ion-card>
+      <img [src]="selectedGame?.image" />
+      <ion-card-content *ngFor="let achievement of selectedGame?.achievements" lines="none">
 
+        <p>- {{ achievement.title}} - {{ achievement.year}}</p>
+
+        <p> {{ achievement.team }}</p>
+      </ion-card-content>
+    </ion-card>
   </ion-grid>
 </ion-content>
