@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/games/teams/teams.module').then(m => m.TeamsPageModule)
   },
   {
+    path: 'team-member/:gameIndex/:teamIndex',
+    loadChildren: () => import('./home/games/teams/team-member/team-member.module').then(m => m.TeamMemberPageModule)
+  },
+  {
     path: 'our-schedule',
     loadChildren: () => import('./home/schedule/schedule.module').then(m => m.SchedulePageModule)
   },
