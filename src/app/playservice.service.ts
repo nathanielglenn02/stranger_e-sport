@@ -70,12 +70,12 @@ export class PlayserviceService {
         },
       ],
       achievements: [
-        { title: 'Champion League Winner', date: '2023', team: 'One Direction' },
-        { title: 'Best Team Play', date: '2022' , team: 'Day6'},
-        { title: 'Most Valuable Player', date: '2021' },
-        { title: 'International Invitational Champion', date: '2023', team: 'One Direction' },
-        { title: 'National Grand Finals', date: '2022', team: 'Day6' },
-        { title: 'Regional Qualifiers Winner', date: '2021', team: 'Black Pink' }
+        { title: 'Champion League Winner', year: '2023', team: 'One Direction' },
+        { title: 'Best Team Play', year: '2022' , team: 'Day6'},
+        { title: 'Most Valuable Player', year: '2021' },
+        { title: 'International Invitational Champion', year: '2023', team: 'One Direction' },
+        { title: 'National Grand Finals', year: '2022', team: 'Day6' },
+        { title: 'Regional Qualifiers Winner', year: '2021', team: 'Black Pink' }
       ]
     },
     {
@@ -106,12 +106,12 @@ export class PlayserviceService {
         },
       ],
       achievements: [
-        { title: 'PUBG World Cup Champion', date: '2023', team: 'TXT' },
-        { title: 'Best Shooter Award', date: '2022', team: 'OneWe' },
-        { title: 'Team of the Year', date: '2021' },
-        { title: 'Survivor Series Champion', date: '2023', team: 'TXT' },
-        { title: 'National Battle Royale Winner', date: '2022', team: 'OneWe' },
-        { title: 'Best Team Coordination', date: '2021', team: 'TXT' }
+        { title: 'PUBG World Cup Champion', year: '2023', team: 'TXT' },
+        { title: 'Best Shooter Award', year: '2022', team: 'OneWe' },
+        { title: 'Team of the Year', year: '2021' },
+        { title: 'Survivor Series Champion', year: '2023', team: 'TXT' },
+        { title: 'National Battle Royale Winner', year: '2022', team: 'OneWe' },
+        { title: 'Best Team Coordination', year: '2021', team: 'TXT' }
       ]
     },
     {
@@ -142,12 +142,12 @@ export class PlayserviceService {
         },
       ],
       achievements: [
-        { title: 'Valorant Global Champions', date: '2023', team: 'Itzy'  },
-        { title: 'Best Tactical Team', date: '2022', team: 'Red Velvet' },
-        { title: 'Rookie of the Year', date: '2021', team: 'Red Velvet' },
-        { title: 'Valorant Masters Winner', date: '2023', team: 'Red Velvet' },
-        { title: 'Regional Showdown Champion', date: '2022', team: 'Itzy' },
-        { title: 'Best Team Strategy', date: '2021', team: 'Red Velvet' }
+        { title: 'Valorant Global Champions', year: '2023', team: 'Itzy'  },
+        { title: 'Best Tactical Team', year: '2022', team: 'Red Velvet' },
+        { title: 'Rookie of the Year', year: '2021', team: 'Red Velvet' },
+        { title: 'Valorant Masters Winner', year: '2023', team: 'Red Velvet' },
+        { title: 'Regional Showdown Champion', year: '2022', team: 'Itzy' },
+        { title: 'Best Team Strategy', year: '2021', team: 'Red Velvet' }
       ]
     },
     {
@@ -178,12 +178,12 @@ export class PlayserviceService {
         },
       ],
       achievements: [
-        { title: 'Clash of Clans World Cup', date: '2023', team: 'Shinee' },
-        { title: 'Best Clan of the Year', date: '2022',  team: 'Le Sserafim' },
-        { title: 'Strategy Master Award', date: '2021', team: 'Shinee' },
-        { title: 'War of Clans Champion', date: '2023', team: 'Shinee' },
-        { title: 'Clan Battle Tournament Winner', date: '2022', team: 'Le Sserafim' },
-        { title: 'Best Clan Strategy', date: '2021', team: 'Shinee' }
+        { title: 'Clash of Clans World Cup', year: '2023', team: 'Shinee' },
+        { title: 'Best Clan of the Year', year: '2022',  team: 'Le Sserafim' },
+        { title: 'Strategy Master Award', year: '2021', team: 'Shinee' },
+        { title: 'War of Clans Champion', year: '2023', team: 'Shinee' },
+        { title: 'Clan Battle Tournament Winner', year: '2022', team: 'Le Sserafim' },
+        { title: 'Best Clan Strategy', year: '2021', team: 'Shinee' }
       ]
     },
     {
@@ -203,12 +203,12 @@ export class PlayserviceService {
         },
       ],
       achievements: [
-        { title: 'Honor of Kings Champion', date: '2023', team: 'EXID' },
-        { title: 'Most Strategic Team', date: '2022', team: 'EXID' },
-        { title: 'Player of the Year', date: '2021', team: 'EXID' },
-        { title: 'Honor of Kings World Cup Winner', date: '2023', team: 'EXID' },
-        { title: 'Regional Masters Champion', date: '2022', team: 'EXID' },
-        { title: 'Best Team Coordination Award', date: '2021', team: 'EXID' }
+        { title: 'Honor of Kings Champion', year: '2023', team: 'EXID' },
+        { title: 'Most Strategic Team', year: '2022', team: 'EXID' },
+        { title: 'Player of the Year', year: '2021', team: 'EXID' },
+        { title: 'Honor of Kings World Cup Winner', year: '2023', team: 'EXID' },
+        { title: 'Regional Masters Champion', year: '2022', team: 'EXID' },
+        { title: 'Best Team Coordination Award', year: '2021', team: 'EXID' }
       ]
     },
   ];
