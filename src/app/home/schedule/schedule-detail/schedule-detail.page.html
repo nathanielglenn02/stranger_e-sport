@@ -1,13 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>schedule_detail</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="wrapper">
+    <ion-item lines="none">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="our-schedule"></ion-back-button>
+      </ion-buttons>
+      <ion-label color="light">
+        <p>Schedule Detail</p>
+      </ion-label>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">schedule_detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+<ion-content>
+  <ion-card class="schedule-detail">
+    <ion-card-header>
+      <ion-img [src]="schedules[index].venueImage"></ion-img>
+      <ion-card-title><strong>{{ schedules[index].title }}</strong></ion-card-title>
+      <ion-card-subtitle>{{ schedules[index].location }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ schedules[index].date }} ({{ schedules[index].time }})</ion-card-subtitle>
+      <p><strong>{{ schedules[index].affectedTeam }}</strong></p>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ schedules[index].description }}</p>
+    </ion-card-content>
+
+    <ion-button expand="full" (click)="notifyMe()">
+      <ion-icon name="notifications-outline"></ion-icon> Notify Me
+    </ion-button>
+  </ion-card>
 </ion-content>

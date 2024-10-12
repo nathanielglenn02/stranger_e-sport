@@ -41,11 +41,11 @@ export class PlayserviceService {
           name: 'Team Alpha',
           image: 'assets/img/game/ml.jpg',
           members: [
-            { nickname: 'Player1', role: 'Duelist', avatar: 'assets/img/player/player1.jpg' },
-            { nickname: 'Player2', role: 'Controller', avatar: 'assets/img/player/player2.jpg' },
-            { nickname: 'Player3', role: 'Sentinel', avatar: 'assets/img/player/player3.jpg' },
-            { nickname: 'Player4', role: 'Initiator', avatar: 'assets/img/player/player4.jpg' },
-            { nickname: 'Player5', role: 'Flex', avatar: 'assets/img/player/player5.jpg' },
+            { nickname: 'Player1', role: 'Duelist', avatar: 'assets/img/Ariel.JPG' },
+            { nickname: 'Player2', role: 'Controller', avatar: 'assets/img/Ariel.JPG' },
+            { nickname: 'Player3', role: 'Sentinel', avatar: 'assets/img/Ariel.JPG' },
+            { nickname: 'Player4', role: 'Initiator', avatar: 'assets/img/Ariel.JPG' },
+            { nickname: 'Player5', role: 'Flex', avatar: 'assets/img/Ariel.JPG' },
           ]
         },
         {

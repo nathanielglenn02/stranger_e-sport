@@ -25,7 +25,7 @@ const routes: Routes = [
     loadChildren: () => import('./home/games/achievement/achievement.module').then(m => m.AchievementPageModule)
   },
   {
-    path: 'teams/:index',
+    path: 'teams',
     loadChildren: () => import('./home/games/teams/teams.module').then(m => m.TeamsPageModule)
   },
   {
@@ -36,6 +36,10 @@ const routes: Routes = [
     path: 'welcome',
     loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomePageModule)
   },
+  {
+    path:'schedule_detail/:index',
+    loadChildren: () => import('./home/schedule/schedule-detail/schedule-detail.module').then(m =>m.ScheduleDetailPageModule)
+  }
 
 ];
 

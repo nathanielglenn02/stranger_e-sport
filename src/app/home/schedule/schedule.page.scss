@@ -14,7 +14,6 @@ ion-header {
     ion-item,
     ion-toolbar.srchBar {
       --background: transparent;
-
     }
 
     ion-item {
@@ -59,7 +58,7 @@ ion-content {
   }
 }
 
-.event-card {
+.schedule-detail {
   margin: 10px;
   border-radius: 16px;
   box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
