@@ -14,7 +14,7 @@
 <ion-content>
   <ion-grid>
     <ion-item *ngFor="let team of selectedGame?.teams; let i = index" lines="none">
-      <ion-card class="event-card" routerLink="/team-member/{{ i }}/{{ i }}">
+      <ion-card class="event-card" routerLink="/team-member/{{index}}/{{ i }}">
         <ion-row>
           <ion-col size="12" class="image-col">
             <img [src]="team?.image" alt="{{ team?.name }}" />

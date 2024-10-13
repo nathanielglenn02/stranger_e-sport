@@ -10,14 +10,8 @@ ion-header {
         --background: url('../../../../assets/img/home/header2.png') no-repeat center center/cover;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
-
-        ion-item,
-        ion-toolbar.srchBar {
-            --background: transparent;
-        }
-
         ion-item {
-            //margin: 3.5vh 0;
+            --background: transparent;
 
             ion-label {
                 font-size: 0.75rem;
@@ -34,8 +28,6 @@ ion-header {
 
                     ion-text {
                         text-shadow: 2px 2px 4px var(--ion-color-black);
-
-
                     }
                 }
 
@@ -57,25 +49,46 @@ ion-content {
 
     ion-item {
         --background: var(--ion-primary-color);
-        ion-card {
-            margin: 10px;
-            border-radius: 16px;
-            box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
-            background-color: #fff;
-        
-            img {
-                width: 100%;
-                height: auto;
-                border-radius: 16px 16px 0 0;
-            }
-        
-            ion-card-title {
-                font-size: 25px;
-                font-weight: bold;
-                color: #333;
-                text-align: center;
-            }
+    }
+    ion-card {
+        margin: 10px;
+        padding: 5px;
+        border-radius: 16px;
+        box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
+        background-color: #fff;
+    
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px 16px 0 0;
         }
     }
+    ion-select {
+        font-size: 1.5rem; /* Increase text size */
+        width: 100%px;      /* Set custom width */
+        height: 50px;      /* Set custom height */
+        --padding-start: 15px;
+        --padding-end: 20px;
+        
+        ion-label {
+          font-size: 1rem; /* Adjust label font size if needed */
+        }
+      
+        /* Customize the outline */
+        --border-color: pink;   /* Set the outline color */
+        --color: #666;          /* Set text color inside select */
+        --placeholder-color: #666; /* Set placeholder color */
+        --placeholder-opacity: 1; /* Ensure placeholder is visible */
+        
+        &::part(container) {
+          border-radius: 8px; /* Adjust border radius if necessary */
+        }
+      
+        /* Customize the dropdown arrow color */
+        ion-icon {
+          color: pink;
+        }
+      }
+      
 }
 

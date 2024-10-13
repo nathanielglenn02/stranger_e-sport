@@ -58,6 +58,7 @@ ion-content {
   border-radius: 16px;
   box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
   background-color: #fff;
+  margin-inline: 30px;
 
   img {
     width: 100%;
@@ -80,6 +81,7 @@ ion-content {
     font-size: 18px;
     font-weight: bold;
     color: #333;
+    margin-block: 20px;
   }
 
   ion-card-content {
@@ -94,7 +96,9 @@ ion-content {
 }
 
 ion-button {
-  margin-top: 15px;
+  margin-block: 15px;
+  height: 90%;
+  width: 40%;
   background-color: var(--ion-color-soft-pink);
   color: white;
 

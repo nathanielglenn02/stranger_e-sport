@@ -19,7 +19,7 @@ export class TeamsPage implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.index = +params['index'];
+      this.index = params['index'];
     });
 
     this.games = this.playservice.games;

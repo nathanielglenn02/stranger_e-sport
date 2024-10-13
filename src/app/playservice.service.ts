@@ -213,7 +213,6 @@ export class PlayserviceService {
     },
   ];
 
-
   getGames() {
     return this.games;
   }
