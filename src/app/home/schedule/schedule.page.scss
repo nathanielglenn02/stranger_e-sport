@@ -11,29 +11,16 @@ ion-header {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 
-    ion-item,
-    ion-toolbar.srchBar {
-      --background: transparent;
-    }
+      
 
     ion-item {
-
+      --background: transparent;
+    
       ion-label {
         font-size: 0.75rem;
 
         ion-icon {
           margin-right: 3px;
-        }
-
-        div {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          color: var(--ion-primary-color);
-
-          ion-text {
-            text-shadow: 2px 2px 4px var(--ion-color-black);
-          }
         }
 
         p {
@@ -61,7 +48,7 @@ ion-content {
 .schedule-card {
   margin: 10px;
   border-radius: 16px;
-  box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
+  box-shadow: 2px 2px 4px 3px var(--ion-color-soft-pink);
   background-color: #fff;
 
   img {
@@ -77,12 +64,12 @@ ion-content {
   }
 
   ion-card-subtitle {
-    font-size: 12px;
+    font-size: 16px;
     color: #777;
   }
 
   ion-card-title {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     color: #333;
   }
@@ -93,7 +80,7 @@ ion-content {
 
     p {
       margin: 5px 0;
-      font-size: 14px;
+      font-size: 16px;
       color: #555;
     }
 

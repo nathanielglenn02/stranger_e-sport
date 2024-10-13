@@ -9,7 +9,7 @@ import { PlayserviceService, Game, Member, Team, Achievement } from '../../../..
 })
 export class TeamMemberPage implements OnInit {
 
-  games: Game[] = [];
+  selectedGame: Game | undefined;
   selectedTeam: Team | undefined;
   gameIndex: number = 0;
   teamIndex: number = 0;
@@ -20,12 +20,11 @@ export class TeamMemberPage implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.gameIndex = +params['gameIndex'];
-      this.teamIndex = +params['teamIndex'];
+      this.gameIndex = params['gameIndex'];
+      this.teamIndex = params['teamIndex'];
     });
 
-    this.games = this.playservice.games;
-    this.selectedTeam = this.games[this.gameIndex]?.teams[this.teamIndex];
+    this.selectedGame = this.playservice.games[this.gameIndex];
+    this.selectedTeam = this.selectedGame.teams[this.teamIndex];
   }
-
 }

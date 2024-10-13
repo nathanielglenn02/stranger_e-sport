@@ -13,8 +13,10 @@
 
 
 <ion-content>
-  <ion-card class="schedule-detail">
-      <ion-img [src]="schedules[index].venueImage"></ion-img>
+  <ion-card>
+    <ion-img [src]="schedules[index].venueImage"></ion-img>
+    <div class="content-card">
+      
       <ion-card-title><strong>{{ schedules[index].title }}</strong></ion-card-title>
       <ion-card-subtitle>{{ schedules[index].location }}</ion-card-subtitle>
       <ion-card-subtitle>{{ schedules[index].date }} ({{ schedules[index].time }})</ion-card-subtitle>
@@ -22,9 +24,13 @@
 
       <p>{{ schedules[index].description }}</p>
 
-    <ion-button expand="full" (click)="notifyMe()">
-      <ion-icon name="notifications-outline"></ion-icon> 
-      Notify Me
-    </ion-button>
+      <div class="button-container">
+        <ion-button (click)="notifyMe()">
+          <ion-icon name="notifications-outline"></ion-icon>
+          Notify Me
+        </ion-button>
+      </div>
+    </div>
+      
   </ion-card>
 </ion-content>

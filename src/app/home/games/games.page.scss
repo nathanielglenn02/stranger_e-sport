@@ -11,26 +11,11 @@ ion-header {
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
 
-        ion-item,
-        ion-toolbar.srchBar {
-            --background: transparent;
-        }
-
         ion-item {
+            --background: transparent;
 
             ion-label {
                 font-size: 0.75rem;
-
-                ion-icon {
-                    margin-right: 3px;
-                }
-
-                div {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    color: var(--ion-primary-color);
-                }
 
                 p {
                     margin-top: 3px;
@@ -58,7 +43,7 @@ ion-content {
 .event-card {
     margin: 10px;
     border-radius: 16px;
-    box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
+    box-shadow: 2px 3px 3px 3px var(--ion-color-soft-pink);
     background-color: #fff;
 
     img {
@@ -73,6 +58,4 @@ ion-content {
         color: #333;
         text-align: center;
     }
-
-
 }

@@ -12,15 +12,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let member of selectedTeam?.members" lines="none" class="member-item">
-      <ion-avatar slot="start">
-        <ion-img [src]="member?.avatar"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        <h2>{{ member?.nickname }}</h2>
-        <p>Role: {{ member?.role }}</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-card class="card-content">
+    <img [src]="selectedTeam?.image" />
+    <ion-card-title><strong>{{ selectedGame?.name }}</strong></ion-card-title>
+    <ion-list>
+      <ion-card *ngFor="let member of selectedTeam?.members" class="member-item">
+        <div class="avatar-text-container">
+          <ion-avatar slot="start">
+            <ion-img [src]="member?.avatar"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ member?.nickname }}</h2>
+            <p>Role: {{ member?.role }}</p>
+          </ion-label>
+        </div>
+      </ion-card>
+    </ion-list>
+  </ion-card>
+
 </ion-content>
