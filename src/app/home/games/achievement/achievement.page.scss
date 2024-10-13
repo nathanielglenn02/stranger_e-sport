@@ -1,9 +1,9 @@
 ion-header {
     --background: var(--ion-primary-color);
 
-    ion-buttons {
+    ion-back-button {
         position: fixed;
-        color: #fff;
+        color: var(--ion-color-white);
     }
 
     ion-toolbar.wrapper {
@@ -64,19 +64,18 @@ ion-content {
         }
     }
     ion-select {
-        font-size: 1.5rem; /* Increase text size */
-        width: 100%px;      /* Set custom width */
-        height: 50px;      /* Set custom height */
+        font-size: 1.5rem;
+        width: 100%px;
+        height: 50px;     
         --padding-start: 15px;
         --padding-end: 20px;
         
         ion-label {
-          font-size: 1rem; /* Adjust label font size if needed */
+          font-size: 1rem;
         }
       
-        /* Customize the outline */
-        --border-color: pink;   /* Set the outline color */
-        --color: #666;          /* Set text color inside select */
+        --border-color: var(--ion-color-soft-pink); 
+        --color: #666;
         --placeholder-color: #666; /* Set placeholder color */
         --placeholder-opacity: 1; /* Ensure placeholder is visible */
         
@@ -84,9 +83,8 @@ ion-content {
           border-radius: 8px; /* Adjust border radius if necessary */
         }
       
-        /* Customize the dropdown arrow color */
         ion-icon {
-          color: pink;
+          color: var(--ion-color-soft-pink);
         }
       }
       

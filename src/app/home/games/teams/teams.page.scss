@@ -1,9 +1,9 @@
 ion-header {
     --background: var(--ion-primary-color);
 
-    ion-buttons {
+    ion-back-button {
         position: fixed;
-        color: #fff;
+        color: var(--ion-color-white);
     }
 
     ion-toolbar.wrapper {
@@ -11,15 +11,8 @@ ion-header {
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
 
-        ion-item,
-        ion-toolbar.srchBar {
-            --background: transparent;
-
-        }
-
         ion-item {
-            //margin: 3.5vh 0;
-
+            --background: transparent;
             ion-label {
                 font-size: 0.75rem;
 
@@ -32,20 +25,15 @@ ion-header {
                     align-items: center;
                     justify-content: flex-start;
                     color: var(--ion-primary-color);
-
-                    ion-text {
-                        text-shadow: 2px 2px 4px var(--ion-color-black);
-
-
-                    }
                 }
 
                 p {
                     margin-top: 3px;
                     font-size: 1.8rem;
-                    color: #fff;
+                    color: var(--ion-color-white);
                     font-weight: bold;
                     text-align: center;
+                    text-shadow: 2px 2px 4px var(--ion-color-black);
                 }
             }
         }

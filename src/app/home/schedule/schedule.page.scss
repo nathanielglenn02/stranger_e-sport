@@ -1,9 +1,9 @@
 ion-header {
   --background: var(--ion-primary-color);
 
-  ion-buttons {
+  ion-back-button {
     position: fixed;
-    color: #fff;
+    color: var(--ion-color-white);
   }
 
   ion-toolbar.wrapper {
@@ -58,7 +58,7 @@ ion-content {
   }
 }
 
-.schedule-card{
+.schedule-card {
   margin: 10px;
   border-radius: 16px;
   box-shadow: 3px 3px 3px var(--ion-color-soft-pink);
