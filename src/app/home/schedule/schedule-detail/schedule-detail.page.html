@@ -2,7 +2,7 @@
   <ion-toolbar class="wrapper">
     <ion-item lines="none">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="our-schedule"></ion-back-button>
+        <ion-back-button defaultHref="our-schedule" text=""></ion-back-button>
       </ion-buttons>
       <ion-label color="light">
         <p>Schedule Detail</p>
@@ -16,7 +16,7 @@
   <ion-card>
     <ion-img [src]="schedules[index].venueImage"></ion-img>
     <div class="content-card">
-      
+
       <ion-card-title><strong>{{ schedules[index].title }}</strong></ion-card-title>
       <ion-card-subtitle>{{ schedules[index].location }}</ion-card-subtitle>
       <ion-card-subtitle>{{ schedules[index].date }} ({{ schedules[index].time }})</ion-card-subtitle>
@@ -25,12 +25,14 @@
       <p>{{ schedules[index].description }}</p>
 
       <div class="button-container">
-        <ion-button (click)="notifyMe()">
+        <ion-button (click)="setOpen(true)">
           <ion-icon name="notifications-outline"></ion-icon>
-          Notify Me
-        </ion-button>
+          Notify Me</ion-button>
+        <ion-alert [isOpen]="isAlertOpen" header="Notification Created"
+          message="We will notify you later." [buttons]="alertButtons"
+          (didDismiss)="setOpen(false)"></ion-alert>
       </div>
     </div>
-      
+
   </ion-card>
 </ion-content>

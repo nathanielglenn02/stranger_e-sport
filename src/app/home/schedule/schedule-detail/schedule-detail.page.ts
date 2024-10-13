@@ -16,6 +16,8 @@ export class ScheduleDetailPage implements OnInit {
     private route: ActivatedRoute,
     private scheduleservice : ScheduleserviceService
   ) { }
+  isAlertOpen = false;
+  alertButtons = ['Action'];
 
 
   ngOnInit() {
@@ -26,8 +28,8 @@ export class ScheduleDetailPage implements OnInit {
     this.schedules= this.scheduleservice.schedules
   }
 
-  notifyMe() {
-    alert('Notification created.');
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
   }
 
 }

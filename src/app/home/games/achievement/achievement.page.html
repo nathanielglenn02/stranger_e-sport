@@ -2,7 +2,7 @@
   <ion-toolbar class="wrapper">
     <ion-item lines="none">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="/games"></ion-back-button>
+        <ion-back-button defaultHref="/games" text=""></ion-back-button>
       </ion-buttons>
       <ion-label color="light">
         <p>Achievement</p>
@@ -18,18 +18,25 @@
 
       <ion-select label="Year" placeholder="All" okText="Choose Year" cancelText="Cancel Choice"
         [(ngModel)]="selectedYear">
-        <ion-select-option value="All">All</ion-select-option> <!-- Default option for showing all years -->
+        <ion-select-option value="All">All</ion-select-option>
         <ion-select-option *ngFor="let year of distinctYears" [value]="year">
           {{ year }}
         </ion-select-option>
       </ion-select>
 
-      <ng-container *ngFor="let achievement of getFilteredAchievements(); let i = index">
-        <ion-card-content>
-          <ion-label>{{ i + 1 }}. {{ achievement.title }} - {{ achievement.year }}</ion-label><br>
-          <ion-label>{{ achievement.team }}</ion-label>
-        </ion-card-content>
-      </ng-container>
+      <ion-grid>
+        <ion-row *ngFor="let achievement of getFilteredAchievements(); let i = index">
+          <ion-col size="auto">
+            <ion-label class="number">{{ i + 1 }}.</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>
+              {{ achievement.title }}<br />
+              <span>{{ achievement.team }}</span>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card>
   </ion-grid>
 </ion-content>

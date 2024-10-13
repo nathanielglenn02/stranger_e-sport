@@ -2,7 +2,7 @@
   <ion-toolbar class="wrapper">
     <ion-item lines="none">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="teams/{{gameIndex}}"></ion-back-button>
+        <ion-back-button defaultHref="teams/{{gameIndex}}" text=""></ion-back-button>
       </ion-buttons>
       <ion-label>
         <p>Team Member</p>
@@ -14,8 +14,9 @@
 <ion-content>
   <ion-card class="card-content">
     <img [src]="selectedTeam?.image" />
-    <ion-card-title><strong>{{ selectedGame?.name }}</strong></ion-card-title>
-    <ion-list>
+    <ion-card-title>
+      <strong>{{ selectedTeam?.name }} ({{ selectedGame?.name }})</strong>
+    </ion-card-title><ion-list>
       <ion-card *ngFor="let member of selectedTeam?.members" class="member-item">
         <div class="avatar-text-container">
           <ion-avatar slot="start">

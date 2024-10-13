@@ -10,6 +10,7 @@ ion-header {
         --background: url('../../../../assets/img/home/header2.png') no-repeat center center/cover;
         border-bottom-left-radius: 25px;
         border-bottom-right-radius: 25px;
+
         ion-item {
             --background: transparent;
 
@@ -20,23 +21,14 @@ ion-header {
                     margin-right: 3px;
                 }
 
-                div {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    color: var(--ion-primary-color);
-
-                    ion-text {
-                        text-shadow: 2px 2px 4px var(--ion-color-black);
-                    }
-                }
-
                 p {
                     margin-top: 3px;
                     font-size: 1.8rem;
                     color: #fff;
                     font-weight: bold;
                     text-align: center;
+                    text-shadow: 2px 2px 4px var(--ion-color-black);
+                
                 }
             }
         }
@@ -50,43 +42,49 @@ ion-content {
     ion-item {
         --background: var(--ion-primary-color);
     }
+
     ion-card {
         margin: 10px;
         padding: 5px;
         border-radius: 16px;
         box-shadow: 2px 2px 4px 3px var(--ion-color-soft-pink);
         background-color: #fff;
-    
+
         img {
             width: 100%;
             height: auto;
             border-radius: 16px 16px 0 0;
         }
+        ion-label {
+            font-size: 1.1rem;
+        }
+        .number {
+            margin-left: 20px;
+        }
     }
+
     ion-select {
         font-size: 1.5rem;
         width: 100%px;
-        height: 50px;     
+        height: 50px;
         --padding-start: 15px;
         --padding-end: 20px;
         
-        ion-label {
-          font-size: 1rem;
-        }
-      
-        --border-color: var(--ion-color-soft-pink); 
-        --color: #666;
-        --placeholder-color: #666; /* Set placeholder color */
-        --placeholder-opacity: 1; /* Ensure placeholder is visible */
-        
-        &::part(container) {
-          border-radius: 8px; /* Adjust border radius if necessary */
-        }
-      
-        ion-icon {
-          color: var(--ion-color-soft-pink);
-        }
-      }
-      
-}
 
+        ion-label {
+            font-size: 1rem;
+        }
+
+        --border-color: var(--ion-color-soft-pink);
+        --color: #666;
+        --placeholder-color: #666;
+        --placeholder-opacity: 1;
+        /* Ensure placeholder is visible */
+
+       
+
+        ion-icon {
+            color: var(--ion-color-soft-pink);
+        }
+    }
+}

@@ -7,11 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: SchedulePage
-  },  {
+  },
+  {
     path: 'schedule-detail',
     loadChildren: () => import('./schedule-detail/schedule-detail.module').then( m => m.ScheduleDetailPageModule)
   },
-
 ];
 
 @NgModule({
