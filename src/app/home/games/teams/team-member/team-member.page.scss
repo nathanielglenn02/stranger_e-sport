@@ -33,14 +33,20 @@ ion-header {
 ion-content {
     --background: var(--ion-primary-color);
 
+    ion-card {
+        background: #fff;
+    }
+
     ion-card-title {
         margin-top: 10px;
         margin-bottom: -10px;
         margin-left: 20px;
+        color: #000;
     }
 
     ion-list {
         margin: 10px;
+        background: #fff;
     }
 
     .card-content {
@@ -54,7 +60,7 @@ ion-content {
         border-radius: 80px;
         box-shadow: 1px 2px 4px 3px var(--ion-color-soft-pink);
     }
-        
+
 
     .avatar-text-container {
         display: flex;

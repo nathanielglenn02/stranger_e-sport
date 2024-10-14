@@ -16,7 +16,8 @@
     <img [src]="selectedTeam?.image" />
     <ion-card-title>
       <strong>{{ selectedTeam?.name }} ({{ selectedGame?.name }})</strong>
-    </ion-card-title><ion-list>
+    </ion-card-title>
+    <ion-list>
       <ion-card *ngFor="let member of selectedTeam?.members" class="member-item">
         <div class="avatar-text-container">
           <ion-avatar slot="start">
