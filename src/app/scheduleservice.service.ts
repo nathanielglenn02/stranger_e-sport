@@ -19,7 +19,7 @@ export class ScheduleserviceService {
     {
       id: 1,
       title: 'MPL XIV',
-      date: '9 Sept 2024',
+      date: '9 Sept 2025',
       time: '11:00 AM',
       gameMode: 'Single Elimination',
       platform: 'Mobile',
@@ -34,7 +34,7 @@ export class ScheduleserviceService {
     {
       id: 2,
       title: 'M6 MLBB',
-      date: '8 Sept 2024',
+      date: '8 Sept 2025',
       time: '11:00 AM',
       gameMode: 'Single Elimination',
       platform: 'Mobile',
@@ -49,7 +49,7 @@ export class ScheduleserviceService {
     {
       id: 3,
       title: 'Valorant Champions Tour (VCT) 2024',
-      date: '8 Sept 2024',
+      date: '8 Sept 2025',
       time: '11:00 AM',
       gameMode: 'Single Elimination',
       platform: 'PC',
@@ -64,12 +64,12 @@ export class ScheduleserviceService {
     {
       id: 4,
       title: 'Clash of Clans World Championship 2024',
-      date: '8 Sept 2024',
+      date: '8 Sept 2025',
       time: '11:00 AM',
       gameMode: 'Single Elimination',
       platform: 'PC',
       prize: '25,000 $',
-      participants: '0 of 30',
+      participants: '4 of 30',
       image: 'assets/img/schedule/cocwc.jpg',
       venueImage :'assets/img/schedule/scheduledetail/venue_coc.png',
       affectedTeam: 'Team A vs Team B',
