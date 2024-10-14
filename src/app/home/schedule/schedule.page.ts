@@ -2,17 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ScheduleserviceService } from 'src/app/scheduleservice.service';
 
-
-interface Event {
-  id: number;
-  title: string;
-  date: string;
-  time: string;
-  image: string;
-  location: string;
-  description: string;
-}
-
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.page.html',
@@ -26,9 +15,5 @@ export class SchedulePage implements OnInit {
 
   ngOnInit() { 
     this.schedules= this.scheduleservice.schedules
-  }
-
-  viewScheduleDetails(schedule: any) {
-    console.log('Schedule :', schedule);
   }
 }
