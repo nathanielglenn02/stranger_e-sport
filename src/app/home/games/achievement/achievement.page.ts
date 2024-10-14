@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AchievementPage implements OnInit {
 
-  selectedYear: number | 'All' = 'All';  // Hold the selected year or 'All' for no filter
+  selectedYear: number | 'All' = 'All';
   games: Game[] = [];
   index: number = 0;
   selectedGame: Game | undefined
@@ -29,8 +29,6 @@ export class AchievementPage implements OnInit {
     this.distinctYears = this.getDistinctYears();
   }
 
-
-  // Generate distinct years from achievements
   getDistinctYears(): string[] {
     const years = this.arrayAchievement.map(achievement => achievement.year);
     return Array.from(new Set(years));  // Use Set to remove duplicates

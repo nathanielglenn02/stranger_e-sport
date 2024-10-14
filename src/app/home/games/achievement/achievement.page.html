@@ -25,13 +25,13 @@
       </ion-select>
 
       <ion-grid>
-        <ion-row *ngFor="let achievement of getFilteredAchievements(); let i = index">
+        <ion-row *ngFor="let achievement of getFilteredAchievements(); let i = index" class="baris">
           <ion-col size="auto">
             <ion-label class="number">{{ i + 1 }}.</ion-label>
           </ion-col>
           <ion-col>
             <ion-label>
-              {{ achievement.title }}<br />
+              {{ achievement.title }} - {{achievement.year}}<br />
               <span>{{ achievement.team }}</span>
             </ion-label>
           </ion-col>

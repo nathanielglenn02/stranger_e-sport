@@ -17,8 +17,7 @@ export class ScheduleDetailPage implements OnInit {
     private scheduleservice : ScheduleserviceService
   ) { }
   isAlertOpen = false;
-  alertButtons = ['Action'];
-
+  alertButtons = ['Okeeeyy'];
 
   ngOnInit() {
     this.route.params.subscribe((params) => {

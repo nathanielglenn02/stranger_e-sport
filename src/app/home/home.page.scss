@@ -60,10 +60,15 @@ ion-header {
       }
     }
 
-    ion-img {
-      height: 50px;
-      width: 50px;
+    ion-avatar{ 
+      margin-right: 35px;
+      margin-bottom: 30px;
+      ion-img {
+        height: 60px;
+        width: 60px;
+      }
     }
+    
   }
 }
 
