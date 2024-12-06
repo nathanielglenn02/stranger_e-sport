@@ -1,13 +1,44 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+// import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
 
-  constructor() { }
+export class HomePage {
+  username = ""
+  password = ""
+  fullname = ""
+
+  constructor(private router: Router) {
+    this.username = localStorage.getItem("project_username") ?? "";
+    this.checkLogin();
+    // defineCustomElements(window);
+  }
+
+  ngOnInit() {
+    this.checkLogin();
+  }
+
+  private checkLogin(): void {
+    this.fullname = localStorage.getItem("project_fullname") ?? "";
+    if (!this.fullname) {
+      this.router.navigate(['/login'], { replaceUrl: true });
+    }
+  }
+
+  logout() {
+    this.username = ""
+    this.fullname = ""
+    localStorage.removeItem("project_username")
+    localStorage.removeItem("project_fullname")
+    this.checkLogin();
+  }
+
   ytbs = [
     {
       imgSrc: 'assets/img/home/thumbnail/mpl2.jpg',

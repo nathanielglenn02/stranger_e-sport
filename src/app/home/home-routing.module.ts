@@ -18,7 +18,23 @@ const routes: Routes = [
   {
     path: 'schedule',
     loadChildren: () => import('./schedule/schedule.module').then(m => m.SchedulePageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'newapplyteam',
+    loadChildren: () => import('./newapplyteam/newapplyteam.module').then( m => m.NewapplyteamPageModule)
+  },
+  {
+    path: 'applyteam',
+    loadChildren: () => import('./applyteam/applyteam.module').then( m => m.ApplyteamPageModule)
   }
+
 ];
 
 @NgModule({

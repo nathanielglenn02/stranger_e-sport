@@ -4,14 +4,16 @@
       <ion-label color="light">
         <div>
           <ion-icon name="locate-outline"></ion-icon>
-          <ion-text>Hello Stranger</ion-text>
+          <ion-text>Hello {{ fullname }}</ion-text>
         </div>
         <p>Stranger E-Sport</p>
       </ion-label>
       <ion-avatar slot="end">
-        <ion-img src="../../assets/img/Ariel.JPG"></ion-img> 
+        <ion-img src="../../assets/img/Ariel.JPG"></ion-img>
       </ion-avatar>
     </ion-item>
+    <ion-button (click)="logout()">Logout</ion-button>
+    <ion-button routerLink="/applyteam">Logout</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -38,8 +40,8 @@
   <ion-card-content class="event">
     <div class="horizontal-scroll">
       <div class="event-card" *ngFor="let evt of evts">
-        <ion-card routerLink="schedule">
-          <ion-img [src]="evt.imgSrc" ></ion-img>
+        <ion-card routerLink="/schedule">
+          <ion-img [src]="evt.imgSrc"></ion-img>
           <ion-card-content>
             <ion-label><strong>{{ evt.title }}</strong></ion-label>
           </ion-card-content>

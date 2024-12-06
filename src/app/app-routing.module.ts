@@ -11,7 +11,14 @@ const routes: Routes = [
     redirectTo: 'welcome',
     pathMatch: 'full'
   },
-
+  {
+    path: 'login',
+    loadChildren: () => import('./home/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./home/register/register.module').then(m => m.RegisterPageModule)
+  },
   {
     path: 'about',
     loadChildren: () => import('./home/about/about.module').then(m => m.AboutPageModule)
@@ -44,7 +51,6 @@ const routes: Routes = [
     path:'schedule_detail/:index',
     loadChildren: () => import('./home/schedule/schedule-detail/schedule-detail.module').then(m =>m.ScheduleDetailPageModule)
   }
-
 ];
 
 @NgModule({

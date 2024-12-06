@@ -14,4 +14,16 @@ export class AppComponent {
   isWelcomePage(): boolean {
     return this.router.url === '/welcome';
   }
+  isLoginPage(): boolean {
+    return this.router.url === '/app/login';
+  }
+  isReg(): boolean {
+    return this.router.url === '/app/register';
+  }
+
+  isExcludedPage(): boolean {
+    const excludedRoutes = ['/welcome', '/login', '/register'];
+    return excludedRoutes.includes(this.router.url);
+  }
+  
 }
