@@ -15,6 +15,7 @@ export class ApplyteamPage implements OnInit {
   
   constructor(private authservice: AuthserviceService, private router: Router) {
     this.checkLogin();
+    this.read_proposal();
   }
 
   ngOnInit() {
@@ -39,5 +40,13 @@ export class ApplyteamPage implements OnInit {
         this.proposals = data;
       }
     );
+  }
+
+  public routeApplyNewTeam():void {
+    this.router.navigate(['./home/applyteam/newapplyteam'], { replaceUrl: true });
+  }
+  
+  ionViewWillEnter() {
+    this.read_proposal();
   }
 }

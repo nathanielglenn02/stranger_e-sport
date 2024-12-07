@@ -28,8 +28,8 @@ ion-header {
 
   ion-toolbar.wrapper {
     --background: url('../../assets/img/home/header2.png') no-repeat center center/cover;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    // border-bottom-left-radius: 25px;
+    // border-bottom-right-radius: 25px;
     
     ion-item {
       margin: 3.5vh 0;
@@ -56,6 +56,10 @@ ion-header {
           color: #fff;
           font-weight: bold;
           text-shadow: 2px 2px 4px var(--ion-color-black);
+        }
+        ion-text {
+          font-size: 1.3em;
+          margin-bottom: 0%;
         }
       }
     }
@@ -146,6 +150,7 @@ ion-button {
 }
 
 ion-content {
+    
   ion-card {
     --background: var(--ion-primary-color);
 

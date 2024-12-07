@@ -1,52 +1,80 @@
 <ion-header class="ion-no-border">
   <ion-toolbar class="wrapper">
+
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: aliceblue;"></ion-menu-button>
+    </ion-buttons>
+
     <ion-item lines="none">
       <ion-label color="light">
+        <p>Stranger E-Sport</p>
         <div>
           <ion-icon name="locate-outline"></ion-icon>
           <ion-text>Hello {{ fullname }}</ion-text>
         </div>
-        <p>Stranger E-Sport</p>
+        
       </ion-label>
       <ion-avatar slot="end">
         <ion-img src="../../assets/img/Ariel.JPG"></ion-img>
       </ion-avatar>
     </ion-item>
-    <ion-button (click)="logout()">Logout</ion-button>
-    <ion-button routerLink="./applyteam">Apply Team</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card-header class="trending">
-    <ion-card-title>Trending This Week 🔥</ion-card-title>
-  </ion-card-header>
-  <ion-card-content class="trending">
-    <div class="horizontal-scroll">
-      <div class="trending-card" *ngFor="let ytb of ytbs" (click)="openLink(ytb.url)">
-        <ion-card>
-          <ion-img [src]="ytb.imgSrc"></ion-img>
-          <ion-card-content>
-            <ion-label><strong>{{ ytb.title }}</strong></ion-label>
-          </ion-card-content>
-        </ion-card>
-      </div>
-    </div>
-  </ion-card-content>
+  <ion-split-pane contentId="main-content">
+    <ion-menu side="start" menuId="sidebar" contentId="main-content">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item routerLink="./applyteam">
+            <ion-icon name="people-outline" slot="start"></ion-icon>
+            <ion-label>Apply Team</ion-label>
+          </ion-item>
+          <ion-item (click)="logout()">
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
 
-  <ion-card-header class="event">
-    <ion-card-title>Event</ion-card-title>
-  </ion-card-header>
-  <ion-card-content class="event">
-    <div class="horizontal-scroll">
-      <div class="event-card" *ngFor="let evt of evts">
-        <ion-card routerLink="/schedule">
-          <ion-img [src]="evt.imgSrc"></ion-img>
-          <ion-card-content>
-            <ion-label><strong>{{ evt.title }}</strong></ion-label>
-          </ion-card-content>
-        </ion-card>
-      </div>
-    </div>
-  </ion-card-content>
+    <ion-content class="ion-page" id="main-content">
+      <ion-card-header class="trending">
+        <ion-card-title>Trending This Week 🔥</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="trending">
+        <div class="horizontal-scroll">
+          <div class="trending-card" *ngFor="let ytb of ytbs" (click)="openLink(ytb.url)">
+            <ion-card>
+              <ion-img [src]="ytb.imgSrc"></ion-img>
+              <ion-card-content>
+                <ion-label><strong>{{ ytb.title }}</strong></ion-label>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </div>
+      </ion-card-content>
+
+      <ion-card-header class="event">
+        <ion-card-title>Event</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="event">
+        <div class="horizontal-scroll">
+          <div class="event-card" *ngFor="let evt of evts">
+            <ion-card routerLink="./schedule">
+              <ion-img [src]="evt.imgSrc"></ion-img>
+              <ion-card-content>
+                <ion-label><strong>{{ evt.title }}</strong></ion-label>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-content>
+  </ion-split-pane>
 </ion-content>

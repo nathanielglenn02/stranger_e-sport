@@ -15,7 +15,7 @@ export class NewapplyteamPage implements OnInit {
 
   constructor(private authservice: AuthserviceService, private router: Router) {
     this.checkLogin();
-   }
+  }
 
   ngOnInit() {
     this.checkLogin();
@@ -54,20 +54,20 @@ export class NewapplyteamPage implements OnInit {
   selectedTeam = ""
   description = ""
 
-    public add_proposal(): void {
-      if (!this.idgame || !this.selectedTeam || !this.description) {
-        alert('Harap lengkapi semua field sebelum mengirim aplikasi.');
-        return;
-      }
-      
-      this.authservice.add_proposal(this.idmember, this.selectedTeam, this.description).subscribe((response: any) => {
-        if (response.result === 'success') {
-          alert("success");
-          this.router.navigate(['/home/applyteam']);
-        }
-        else {
-          alert(response.message)
-        } 
-      });
+  public add_proposal(): void {
+    if (!this.idgame || !this.selectedTeam || !this.description) {
+      alert('Harap lengkapi semua field sebelum mengirim aplikasi.');
+      return;
     }
+
+    this.authservice.add_proposal(this.idmember, this.selectedTeam, this.description).subscribe((response: any) => {
+      if (response.result === 'success') {
+        alert("success");
+        this.router.navigate(['/home/applyteam']);
+      }
+      else {
+        alert(response.message)
+      }
+    });
+  }
 }

@@ -11,19 +11,18 @@
 <ion-content [fullscreen]="true">
   <img src="../../../assets/img/logo.jpg" />
   <ion-card>
-    <ion-item>
-      <ion-input [(ngModel)]="username" label="Username" labelPlacement="floating"></ion-input>
+    <ion-item class="custom-item">
+      <ion-input [(ngModel)]="username" label="Username" labelPlacement="floating" class="large-input"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-input [(ngModel)]="password" type="password" label="Password" labelPlacement="floating"></ion-input>
+    <ion-item class="custom-item">
+      <ion-input [(ngModel)]="password" type="password" label="Password" labelPlacement="floating"  placeholder="Enter text" class="large-input"></ion-input>
     </ion-item>
     <ion-button expand="block" (click)="login()">Login</ion-button>
   </ion-card>
 
-  <!-- Tambahkan ini -->
-  <div style="text-align: center; margin-top: 1rem;">
+  <div class="reg-link">
     <p>Belum punya akun? 
-      <a [routerLink]="['/register']" style="color: #ff6b6b; font-weight: bold;">Daftar di sini</a>
+      <a [routerLink]="['/register']">Daftar di sini</a>
     </p>
   </div>
 </ion-content>
