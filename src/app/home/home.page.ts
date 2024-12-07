@@ -38,6 +38,10 @@ export class HomePage {
     localStorage.removeItem("project_fullname")
     this.checkLogin();
   }
+  
+  ionViewWillEnter() {
+    this.checkLogin();
+  }
 
   ytbs = [
     {
