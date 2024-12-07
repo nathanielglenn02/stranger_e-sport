@@ -19,7 +19,27 @@ export class AuthserviceService {
       "https://ubaya.xyz/hybrid/160822004/project/login.php", urlEncodedData, { headers });
   }
   
-  read_proposal(usn?: string): Observable<any> {
-    return this.http.get("https://ubaya.xyz/hybrid/160822004/read_proposal.php?username=" + usn);
+  read_proposal(idmember?: number): Observable<any> {
+    return this.http.get("https://ubaya.xyz/hybrid/160822004/project/read_proposal.php?idmember=" + idmember);
+  }
+
+  read_game(): Observable<any> {
+    return this.http.get("https://ubaya.xyz/hybrid/160822004/project/read_game.php");
+  }
+
+  read_team(idgame?: number): Observable<any> {
+    return this.http.get("https://ubaya.xyz/hybrid/160822004/project/read_team.php?idgame=" + idgame);
+  }
+
+  add_proposal(p_idmember: string, p_idteam: string, p_description: string) {
+    //this.pastas.push({name:p_name,url:p_url,description:p_description,price:p_price})
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('idmember', p_idmember);
+    body.set('idteam', p_idteam);
+    body.set('description', p_description);
+    const urlEncodedData = body.toString();
+    return this.http.post(
+      "https://ubaya.xyz/hybrid/160822004/project/create_proposal.php", urlEncodedData, { headers });
   }
 }

@@ -12,6 +12,7 @@ export class LoginPage implements OnInit {
   username = ""
   password = ""
   fullname = ""
+  idmember = ""
 
   constructor(private authservice: AuthserviceService, private router: Router) {
     this.username = localStorage.getItem("project_username") ?? "";
@@ -37,12 +38,14 @@ export class LoginPage implements OnInit {
           // Ambil data user dari array pertama di response.data
           const userData = response.data[0];
           this.fullname = `${userData.fname} ${userData.lname}`;
+          this.idmember =  `${userData.idmember}`;
 
           alert(`Login successful! Welcome, ${this.fullname}`);
 
           // Simpan ke localStorage
           localStorage.setItem("project_username", this.username);
           localStorage.setItem("project_fullname", this.fullname);
+          localStorage.setItem("project_idmember", this.idmember);
 
           // Lakukan tindakan setelah login
           this.checkLogin();

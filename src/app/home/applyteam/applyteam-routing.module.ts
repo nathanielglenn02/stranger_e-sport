@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ApplyteamPage
+  },  {
+    path: 'newapplyteam',
+    loadChildren: () => import('./newapplyteam/newapplyteam.module').then( m => m.NewapplyteamPageModule)
   }
+
 ];
 
 @NgModule({

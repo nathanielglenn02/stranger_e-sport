@@ -1,13 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>applyteam</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="wrapper">
+    <ion-item lines="none">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home" text=""></ion-back-button>
+      </ion-buttons>
+      <ion-label color="light">
+        <p>Apply Team</p>
+      </ion-label>
+    </ion-item>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">applyteam</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <div *ngIf="!proposals || proposals.length === 0">
+    <h5>You have not registered for any team yet.</h5>
+  </div>
+
+  <div *ngIf="proposals && proposals.length > 0">
+    <h5>Hello, {{ fullname }}! You have applied to several teams.</h5>
+
+    <ion-grid>
+      <ion-row *ngFor="let proposal of proposals; let i = index" class="proposal-row">
+        <ion-col>
+          <ion-card class="proposal-card">
+            <ion-card-content class="proposal-content">
+              <div class="left-content">
+                <span class="number">{{ i + 1 }}.</span>
+                <h2 class="team-name">{{ proposal.teamName }} ({{ proposal.gameName }})</h2>
+              </div>
+              <div class="status">
+                <ion-chip *ngIf="proposal.joinStatus === 'waiting'" color="warning">Waiting</ion-chip>
+                <ion-chip *ngIf="proposal.joinStatus === 'approved'" color="success">Approved</ion-chip>
+                <ion-chip *ngIf="proposal.joinStatus === 'rejected'" color="danger">Rejected</ion-chip>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>      
+    </ion-grid>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" routerLink="./newapplyteam">
+    <ion-fab-button color="primary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
+

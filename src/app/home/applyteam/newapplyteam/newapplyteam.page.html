@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="wrapper">
+    <ion-item lines="none">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="../applyteam" text=""></ion-back-button>
+      </ion-buttons>
+      <ion-label color="light">
+        <p>Apply to Join a Team</p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Pilih Game</ion-label>
+    <ion-select [(ngModel)]="idgame" (ionChange)="read_teams()">
+      <ion-select-option *ngFor="let game of games" [value]="game.idgame">
+        {{ game.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Pilih Tim</ion-label>
+    <ion-select [(ngModel)]="selectedTeam">
+      <ion-select-option *ngFor="let team of teams" [value]="team.idteam">
+        {{ team.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Alasan Bergabung</ion-label>
+    <ion-textarea [(ngModel)]="description" placeholder="Jelaskan mengapa Anda ingin bergabung dengan tim ini"></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="full" color="primary" (click)="add_proposal()">
+    Join
+  </ion-button>
+
+</ion-content>

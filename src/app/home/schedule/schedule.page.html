@@ -13,7 +13,6 @@
 
 <ion-content>
   <ion-item *ngFor="let schedule of schedules; let i=index" lines="none">
-
     <ion-card class="schedule-card" routerLink="/schedule_detail/{{i}}">
       <img [src]="schedule.image" alt="{{ schedule.title }}" />
       <ion-card-header>
