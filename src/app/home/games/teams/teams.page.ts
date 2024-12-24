@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlayserviceService, Game, Member, Team, Achievement } from '../../../playservice.service';
+import { PlayserviceService, Team } from '../../../playservice.service';
 
 @Component({
   selector: 'app-teams',
@@ -9,21 +9,25 @@ import { PlayserviceService, Game, Member, Team, Achievement } from '../../../pl
 })
 export class TeamsPage implements OnInit {
 
-  games: Game[] = [];
-  index: number = 0;
-  selectedGame: Game | undefined;
+  idgame: number = 0;
+  teams: Team[] = [];
 
   constructor(
     private route: ActivatedRoute,
-    private playservice: PlayserviceService) { }
+    private playservice: PlayserviceService
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.index = params['index'];
+      this.idgame = +params['idgame'];
     });
 
-    this.games = this.playservice.games;
-    this.selectedGame = this.games[this.index];
+    this.playservice.getTeams(this.idgame).subscribe(response => {
+      if (response.result === 'OK') {
+        this.teams = response.data || [];
+      } else {
+        this.teams = [];
+      }
+    });
   }
-
 }

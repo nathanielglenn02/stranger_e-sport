@@ -12,18 +12,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+  <ion-item *ngIf="!isLoading && errorMessage" lines="none">
+    <ion-label>{{ errorMessage }}</ion-label>
+  </ion-item>
+  <ion-grid *ngIf="!isLoading && arrayAchievement.length > 0">
     <ion-card>
-      <img [src]="selectedGame?.image" />
-
-      <ion-select label="Year" placeholder="All" okText="Choose Year" cancelText="Cancel Choice"
-        [(ngModel)]="selectedYear">
+      <img [src]="selectedGame?.image || 'assets/img/game/default.jpg'" />
+      <ion-select label="Year" placeholder="All" [(ngModel)]="selectedYear">
         <ion-select-option value="All">All</ion-select-option>
         <ion-select-option *ngFor="let year of distinctYears" [value]="year">
           {{ year }}
         </ion-select-option>
       </ion-select>
-
       <ion-grid>
         <ion-row *ngFor="let achievement of getFilteredAchievements(); let i = index" class="baris">
           <ion-col size="auto">
@@ -31,7 +32,7 @@
           </ion-col>
           <ion-col>
             <ion-label>
-              {{ achievement.title }} - {{achievement.year}}<br />
+              {{ achievement.title }} - {{ achievement.year }}<br />
               <span>{{ achievement.team }}</span>
             </ion-label>
           </ion-col>

@@ -28,11 +28,11 @@ const routes: Routes = [
     loadChildren: () => import('./home/games/games.module').then(m => m.GamesPageModule)
   },
   {
-    path: 'achievements/:index',
+    path: 'achievement/:idgame',
     loadChildren: () => import('./home/games/achievement/achievement.module').then(m => m.AchievementPageModule)
   },
   {
-    path: 'teams/:index',
+    path: 'teams/:idgame',
     loadChildren: () => import('./home/games/teams/teams.module').then(m => m.TeamsPageModule)
   },
   {
@@ -48,8 +48,8 @@ const routes: Routes = [
     loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomePageModule)
   },
   {
-    path:'schedule_detail/:index',
-    loadChildren: () => import('./home/schedule/schedule-detail/schedule-detail.module').then(m =>m.ScheduleDetailPageModule)
+    path: 'schedule_detail/:index',
+    loadChildren: () => import('./home/schedule/schedule-detail/schedule-detail.module').then(m => m.ScheduleDetailPageModule)
   }
 ];
 
