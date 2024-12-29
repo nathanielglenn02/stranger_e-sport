@@ -1,6 +1,8 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
+header("Content-Type: application/json");
+
 $servername = "localhost";
 $username = "hybrid_160822004";
 $password = "ubaya";
@@ -8,33 +10,33 @@ $dbname = "hybrid_160822004";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die(json_encode(array('result' => 'ERROR', 'message' => 'Connection failed: ' . $conn->connect_error)));
 }
 
-$username = $_POST['username'] ?? '';
-$password = $_POST['password'] ?? '';
+$data = json_decode(file_get_contents("php://input"), true);
+$username = $data['username'] ?? '';
+$password = $data['password'] ?? '';
 
-if ($username == '' ||  $password == '') {
+if (empty($username) || empty($password)) {
     echo json_encode(array('result' => 'ERROR', 'message' => 'Username or Password is empty'));
     die();
 }
 
-$password_hashed = md5($password);
-
-$sql = "SELECT * FROM member
-where username = ? and password = ?";
+$sql = "SELECT * FROM member WHERE username = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $username, $password_hashed);
-
+$stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
-$array = array();
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $array[] = $row;
+
+if ($row = $result->fetch_assoc()) {
+    if (password_verify($password, $row['password'])) {
+        unset($row['password']);
+        echo json_encode(array('result' => 'OK', 'data' => $row, 'message' => 'Login berhasil'));
+    } else {
+        echo json_encode(array('result' => 'ERROR', 'message' => 'Password salah'));
     }
-    echo json_encode(array('result' => 'OK', 'data' => $array, 'message' => 'Anda berhasil login'));
 } else {
-    echo json_encode(array('result' => 'ERROR', 'message' => 'Username atau Password salah. Silahkan coba lagi'));
-    die();
+    echo json_encode(array('result' => 'ERROR', 'message' => 'Username tidak ditemukan'));
 }
+
+$conn->close();

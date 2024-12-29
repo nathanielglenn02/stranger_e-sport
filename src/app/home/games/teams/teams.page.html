@@ -19,7 +19,7 @@
 
   <ion-grid *ngIf="!isLoading && teams.length > 0">
     <ion-item *ngFor="let team of teams; let i = index" lines="none">
-      <ion-card class="event-card" [routerLink]="'/team-member/' + idgame + '/' + team.idteam">
+      <ion-card class="event-card" [routerLink]="'/team-member/' + team.idteam">
         <ion-row>
           <ion-col size="12" class="image-col">
             <img [src]="team.imgPath" alt="{{ team.name }}" />
@@ -33,4 +33,5 @@
       </ion-card>
     </ion-item>
   </ion-grid>
+
 </ion-content>

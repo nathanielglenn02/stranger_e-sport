@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlayserviceService, Team, Member } from '../../../../playservice.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-team-member',
@@ -8,38 +9,45 @@ import { PlayserviceService, Team, Member } from '../../../../playservice.servic
   styleUrls: ['./team-member.page.scss'],
 })
 export class TeamMemberPage implements OnInit {
-
-  selectedTeam: Team | undefined; // Data tim yang dipilih
-  idgame: number = 0; // ID game dari URL
-  idteam: number = 0; // ID tim dari URL
-  members: Member[] = []; // Data anggota tim
+  idteam: number = 0;
+  team: Team | undefined;
+  members: Member[] = [];
+  isLoading: boolean = true;
+  errorMessage: string = '';
 
   constructor(
     private route: ActivatedRoute,
-    private playservice: PlayserviceService
+    private playservice: PlayserviceService,
+    private location: Location
   ) { }
 
   ngOnInit() {
-    // Ambil parameter dari URL
     this.route.params.subscribe(params => {
-      this.idgame = +params['idgame']; // Ambil idgame dari URL
-      this.idteam = +params['idteam']; // Ambil idteam dari URL
+      this.idteam = +params['idteam'];
+      this.fetchTeamData();
     });
+  }
 
-    // Ambil data tim berdasarkan idgame
-    this.playservice.getTeams(this.idgame).subscribe(response => {
+  fetchTeamData() {
+    this.isLoading = true;
+    this.playservice.getTeamMembers(this.idteam).subscribe(response => {
+      console.log('Team Members API Response:', response);
+
       if (response.result === 'OK') {
-        // Cari tim berdasarkan idteam
-        this.selectedTeam = response.data.find((team: Team) => team.idteam === this.idteam);
-
-        // Ambil anggota tim jika tim ditemukan
-        if (this.selectedTeam) {
-          this.members = this.selectedTeam.members || []; // Default kosong jika undefined
-        }
+        this.team = response.team;
+        this.members = response.members;
       } else {
-        this.selectedTeam = undefined; // Set undefined jika tidak ada tim
-        this.members = [];
+        this.errorMessage = response.message;
       }
+
+      this.isLoading = false;
+    }, error => {
+      console.error('Error fetching team members:', error);
+      this.errorMessage = 'Failed to fetch team members.';
+      this.isLoading = false;
     });
+  }
+  goBack() {
+    this.location.back();
   }
 }

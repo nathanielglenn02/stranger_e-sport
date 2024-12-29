@@ -2,7 +2,7 @@
   <ion-toolbar class="wrapper">
     <ion-item lines="none">
       <ion-buttons slot="start">
-        <ion-back-button [defaultHref]="'/teams/' + idgame" text=""></ion-back-button>
+        <ion-back-button defaultHref="" text="" (click)="goBack()"></ion-back-button>
       </ion-buttons>
       <ion-label>
         <p>Team Member</p>
@@ -11,25 +11,31 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <ion-card class="card-content">
-    <img [src]="selectedTeam?.imgPath" />
+  <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+  <ion-item *ngIf="!isLoading && errorMessage" lines="none">
+    <ion-label>{{ errorMessage }}</ion-label>
+  </ion-item>
+
+  <ion-card *ngIf="!isLoading && team" class="card-content">
+    <img [src]="team.imgPath" alt="{{ team.name }}" />
     <ion-card-title>
-      <strong>{{ selectedTeam?.name }}</strong>
+      <strong>{{ team.name }}</strong>
     </ion-card-title>
-    <ion-list>
-      <ion-card *ngFor="let member of selectedTeam?.members" class="member-item">
-        <div class="avatar-text-container">
-          <ion-avatar slot="start">
-            <ion-img [src]="member?.avatar"></ion-img>
-          </ion-avatar>
-          <ion-label>
-            <h2>{{ member?.nickname }}</h2>
-            <p>Role: {{ member?.role }}</p>
-          </ion-label>
-        </div>
-      </ion-card>
-    </ion-list>
   </ion-card>
 
+  <ion-list *ngIf="!isLoading && members.length > 0">
+    <ion-card *ngFor="let member of members" class="member-item">
+      <div class="avatar-text-container">
+        <ion-avatar slot="start">
+          <ion-img [src]="member.imgPath"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ member.username }}</h2>
+          <p>Role: {{ member.role }}</p>
+        </ion-label>
+      </div>
+    </ion-card>
+  </ion-list>
 </ion-content>

@@ -3,19 +3,16 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Content-Type: application/json");
 
-// Database Credentials
 $servername = "localhost";
 $username = "hybrid_160822004";
 $password = "ubaya";
 $dbname = "hybrid_160822004";
 
-// Buat koneksi database
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die(json_encode(array('result' => 'ERROR', 'message' => 'Connection failed: ' . $conn->connect_error)));
 }
 
-// Query untuk mendapatkan semua data game
 $sql = "SELECT idgame, name, description, imgPath FROM game";
 $result = $conn->query($sql);
 
@@ -29,5 +26,4 @@ if ($result->num_rows > 0) {
     echo json_encode(array("result" => "ERROR", "message" => "No data found"));
 }
 
-// Tutup koneksi
 $conn->close();

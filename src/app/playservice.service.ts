@@ -3,18 +3,17 @@ import { Injectable } from '@angular/core';
 import { forkJoin, Observable } from 'rxjs';
 
 export interface Member {
-  nickname: string;
+  username: string;
   role: string;
-  avatar: string;
+  imgPath: string;
 }
 
 export interface Team {
-  idteam: number; // Tambahkan ini
+  idteam: number;
   name: string;
-  imgPath: string; // Opsional untuk gambar
-  members?: Member[]; // Opsional untuk anggota tim
+  imgPath: string;
+  members?: Member[];
 }
-
 
 export interface Achievement {
   title: string;
@@ -23,21 +22,13 @@ export interface Achievement {
   imgPath: string;
 }
 
-// BEFORE
-// export interface Game {
-//   name: string;
-//   image: string;
-//   teams: Team[];
-//   achievements: Achievement[];
-// }
-
 export interface Game {
   idgame: number;
   name: string;
   description: string;
   imgPath: string;
-  teams?: Team[]; // Optional teams
-  achievements?: Achievement[]; // Optional achievements
+  teams?: Team[];
+  achievements?: Achievement[];
 }
 
 
@@ -243,8 +234,13 @@ export class PlayserviceService {
   }
 
   getAchievements(idgame: number): Observable<any> {
-    console.log('Mengirim idgame ke API:', idgame); // Log idgame
+    console.log('Mengirim idgame ke API:', idgame);
     return this.http.post(this.baseUrl + 'get_achievements.php', { idgame });
+  }
+
+  getTeamMembers(idteam: number): Observable<any> {
+    console.log('Mengirim idteam ke API:', idteam);
+    return this.http.post(this.baseUrl + 'get_team_members.php', { idteam });
   }
 
 
