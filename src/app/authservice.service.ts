@@ -20,6 +20,24 @@ export class AuthserviceService {
 
   }
 
+  register(fname: string, lname: string, username: string, password: string) {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    const body = new URLSearchParams();
+    body.set('fname', fname);
+    body.set('lname', lname);
+    body.set('username', username);
+    body.set('password', password);
+    const urlEncodedData = body.toString();
+
+    return this.http.post(
+      "https://ubaya.xyz/hybrid/160822004/project/register.php",
+      urlEncodedData,
+      { headers }
+    );
+  }
+
+
+
   read_proposal(idmember?: number): Observable<any> {
     return this.http.get("https://ubaya.xyz/hybrid/160822004/project/read_proposal.php?idmember=" + idmember);
   }
