@@ -12,20 +12,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-item *ngIf="teams.length === 0" lines="none">
-      <ion-label>No teams available.</ion-label>
-    </ion-item>
+  <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+  <ion-item *ngIf="!isLoading && errorMessage" lines="none">
+    <ion-label>{{ errorMessage }}</ion-label>
+  </ion-item>
 
+  <ion-grid *ngIf="!isLoading && teams.length > 0">
     <ion-item *ngFor="let team of teams; let i = index" lines="none">
       <ion-card class="event-card" [routerLink]="'/team-member/' + idgame + '/' + team.idteam">
         <ion-row>
           <ion-col size="12" class="image-col">
-            <img [src]="team?.image || 'assets/img/team/default.jpg'" alt="{{ team?.name }}" />
+            <img [src]="team.imgPath" alt="{{ team.name }}" />
           </ion-col>
           <ion-col size="12">
             <ion-card-header>
-              <ion-card-title>{{ team?.name }}</ion-card-title>
+              <ion-card-title>{{ team.name }}</ion-card-title>
             </ion-card-header>
           </ion-col>
         </ion-row>

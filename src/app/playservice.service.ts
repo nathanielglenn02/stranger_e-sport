@@ -11,7 +11,7 @@ export interface Member {
 export interface Team {
   idteam: number; // Tambahkan ini
   name: string;
-  image?: string; // Opsional untuk gambar
+  imgPath: string; // Opsional untuk gambar
   members?: Member[]; // Opsional untuk anggota tim
 }
 
@@ -238,6 +238,7 @@ export class PlayserviceService {
   }
 
   getTeams(idgame: number): Observable<any> {
+    console.log('Mengirim idgame ke API untuk Teams:', idgame);
     return this.http.post(this.baseUrl + 'get_teams.php', { idgame });
   }
 
@@ -245,9 +246,6 @@ export class PlayserviceService {
     console.log('Mengirim idgame ke API:', idgame); // Log idgame
     return this.http.post(this.baseUrl + 'get_achievements.php', { idgame });
   }
-
-
-
 
 
   getFullGameData(idgame: number): Observable<any> {
