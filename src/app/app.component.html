@@ -1,8 +1,8 @@
 <ion-app>
-  <ion-router-outlet>
+  <ion-router-outlet [swipeGesture]="false" [animated]="false">
     <ion-tabs>
-      
-      <ion-tab-bar slot="bottom" *ngIf="!isExcludedPage()" >
+
+      <ion-tab-bar slot="bottom" *ngIf="!isExcludedPage()">
         <ion-tab-button tab="home" routerLink="home">
           <ion-icon name="home-outline"></ion-icon>
           <ion-label>Home</ion-label>

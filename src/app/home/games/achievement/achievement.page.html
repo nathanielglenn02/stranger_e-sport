@@ -12,19 +12,29 @@
 </ion-header>
 
 <ion-content>
+  <!-- Spinner saat loading -->
   <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+
+  <!-- Pesan error -->
   <ion-item *ngIf="!isLoading && errorMessage" lines="none">
     <ion-label>{{ errorMessage }}</ion-label>
   </ion-item>
+
+  <!-- Data Achievement -->
   <ion-grid *ngIf="!isLoading && arrayAchievement.length > 0">
     <ion-card>
-      <img [src]="selectedGame?.image || 'assets/img/game/default.jpg'" />
-      <ion-select label="Year" placeholder="All" [(ngModel)]="selectedYear">
+      <!-- Gambar Game -->
+      <img [src]="imgPath" alt="Game Image" />
+
+      <!-- Pilihan Tahun -->
+      <ion-select placeholder="All Years" [(ngModel)]="selectedYear">
         <ion-select-option value="All">All</ion-select-option>
         <ion-select-option *ngFor="let year of distinctYears" [value]="year">
           {{ year }}
         </ion-select-option>
       </ion-select>
+
+      <!-- Daftar Achievement -->
       <ion-grid>
         <ion-row *ngFor="let achievement of getFilteredAchievements(); let i = index" class="baris">
           <ion-col size="auto">

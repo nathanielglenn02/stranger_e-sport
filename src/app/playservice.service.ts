@@ -20,6 +20,7 @@ export interface Achievement {
   title: string;
   year: string;
   team: string;
+  imgPath: string;
 }
 
 // BEFORE
@@ -34,7 +35,7 @@ export interface Game {
   idgame: number;
   name: string;
   description: string;
-  image?: string; // Optional image
+  imgPath: string;
   teams?: Team[]; // Optional teams
   achievements?: Achievement[]; // Optional achievements
 }
@@ -241,8 +242,13 @@ export class PlayserviceService {
   }
 
   getAchievements(idgame: number): Observable<any> {
+    console.log('Mengirim idgame ke API:', idgame); // Log idgame
     return this.http.post(this.baseUrl + 'get_achievements.php', { idgame });
   }
+
+
+
+
 
   getFullGameData(idgame: number): Observable<any> {
     return forkJoin({

@@ -8,7 +8,6 @@ import { PlayserviceService, Game, Achievement } from '../../../playservice.serv
   styleUrls: ['./achievement.page.scss'],
 })
 export class AchievementPage implements OnInit {
-
   // Variabel
   selectedYear: number | 'All' = 'All';
   selectedGame: Game | undefined;
@@ -17,6 +16,8 @@ export class AchievementPage implements OnInit {
   idgame: number = 0;
   isLoading: boolean = true;
   errorMessage: string = '';
+  imgPath: string = 'assets/img/game/default.jpg';
+
 
   constructor(
     private route: ActivatedRoute,
@@ -24,24 +25,47 @@ export class AchievementPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Ambil idgame dari parameter
     this.route.params.subscribe(params => {
-      this.idgame = +params['idgame'];
+      this.idgame = +params['idgame']; // Konversi ke number
+      console.log('ID Game:', this.idgame); // Debug
+      if (isNaN(this.idgame) || this.idgame <= 0) {
+        console.error('ID Game tidak valid:', this.idgame);
+        this.errorMessage = 'Invalid Game ID.';
+        this.isLoading = false;
+        return; // Hentikan eksekusi jika ID tidak valid
+      }
       this.fetchAchievements();
       this.fetchGameDetails();
     });
   }
 
+  ionViewWillEnter() {
+    // Pastikan data di-refresh setiap kali halaman dimasuki kembali
+    this.fetchAchievements();
+    this.fetchGameDetails();
+  }
+
+  // Fetch data achievements dari API
   fetchAchievements() {
-    this.playService.getAchievements(this.idgame).subscribe(response => {
-      if (response.result === 'OK') {
-        this.arrayAchievement = response.data || [];
-        this.distinctYears = this.getDistinctYears();
-      } else {
-        this.arrayAchievement = [];
-        this.errorMessage = 'No achievements available.';
-      }
-      this.isLoading = false;
-    },
+    console.log('Fetching achievements for idgame:', this.idgame);
+    this.playService.getAchievements(this.idgame).subscribe(
+      response => {
+        console.log('API Response:', response);
+        if (response.result === 'OK' && response.data.length > 0) {
+          this.arrayAchievement = response.data || [];
+          this.distinctYears = this.getDistinctYears();
+          this.imgPath = this.arrayAchievement[0]?.imgPath || 'assets/img/game/default.jpg';
+          this.errorMessage = '';
+        } else {
+          this.arrayAchievement = [];
+          this.errorMessage = 'No achievements available.';
+        }
+        console.log('Achievements:', this.arrayAchievement);
+        console.log('Distinct Years:', this.distinctYears);
+        console.log('Image Path:', this.imgPath); // Log gambar
+        this.isLoading = false;
+      },
       error => {
         console.error('Error fetching achievements:', error);
         this.errorMessage = 'Failed to load achievements.';
@@ -50,11 +74,19 @@ export class AchievementPage implements OnInit {
     );
   }
 
+
+
+  // Fetch detail game untuk gambar
   fetchGameDetails() {
     this.playService.getGames().subscribe(
       response => {
+        console.log('Game Response:', response);
         if (response.result === 'OK') {
-          this.selectedGame = response.data.find((game: Game) => game.idgame === this.idgame);
+          // Perbaiki pencarian dengan konversi tipe data
+          this.selectedGame = response.data.find(
+            (game: Game) => Number(game.idgame) === this.idgame // Ubah string ke number
+          );
+          console.log('Selected Game:', this.selectedGame);
         }
       },
       error => {
@@ -64,11 +96,14 @@ export class AchievementPage implements OnInit {
     );
   }
 
+
+  // Ambil daftar tahun unik dari data achievement
   getDistinctYears(): string[] {
     const years = this.arrayAchievement.map(achievement => achievement.year);
-    return Array.from(new Set(years));
+    return Array.from(new Set(years)); // Hilangkan duplikat
   }
 
+  // Filter data achievement berdasarkan tahun
   getFilteredAchievements(): Achievement[] {
     if (this.selectedYear === 'All') {
       return this.arrayAchievement;

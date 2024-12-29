@@ -15,9 +15,11 @@ if ($conn->connect_error) {
     die(json_encode(array('result' => 'ERROR', 'message' => 'Connection failed: ' . $conn->connect_error)));
 }
 
-// Ambil parameter idgame dari GET
-$idgame = $_GET['idgame'] ?? '';
+// Ambil parameter idgame dari POST (bukan GET)
+$data = json_decode(file_get_contents("php://input"), true); // Ambil JSON POST
+$idgame = $data['idgame'] ?? '';
 
+// Validasi idgame
 if (!is_numeric($idgame) || $idgame == '') {
     echo json_encode(array('result' => 'ERROR', 'message' => 'Game ID is required and must be numeric.'));
     die();
@@ -28,11 +30,14 @@ $sql = "
 SELECT 
     achievement.name AS title, 
     YEAR(achievement.date) AS year, 
-    team.name AS team 
+    team.name AS team,
+    game.imgPath AS imgPath
 FROM 
     achievement 
 INNER JOIN 
-    team ON achievement.idteam = team.idteam 
+    team ON achievement.idteam = team.idteam
+INNER JOIN
+    game ON team.idgame = game.idgame
 WHERE 
     team.idgame = ?
 ORDER BY 

@@ -7,11 +7,11 @@ import { PlayserviceService, Game } from '../../playservice.service';
   templateUrl: './games.page.html',
   styleUrls: ['./games.page.scss'],
 })
-
 export class GamesPage implements OnInit {
 
   games: Game[] = [];
-  index: number = 0;
+  isLoading: boolean = true;
+  errorMessage: string = '';
 
   constructor(
     private router: Router,
@@ -19,36 +19,26 @@ export class GamesPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.playservice.getGames().subscribe(response => {
-      if (response.result === 'OK') {
-        this.games = response.data.map((game: Game) => ({
-          ...game,
-          image: this.getImagePath(game.name)
-        }));
-
-        this.games.forEach(game => {
-          this.playservice.getFullGameData(game.idgame).subscribe(details => {
-            if (details.teams.result === 'OK') {
-              game.teams = details.teams.data;
-            }
-            if (details.achievements.result === 'OK') {
-              game.achievements = details.achievements.data;
-            }
-          });
-        });
-      }
-    });
+    this.fetchGames();
   }
 
-
-  getImagePath(name: string): string {
-    const images: { [key: string]: string } = {
-      'Mobile Legends': 'assets/img/game/ml.jpg',
-      'PUBG': 'assets/img/game/pubg.jpg',
-      'Valorant': 'assets/img/game/valorant.jpg',
-      'Clash of Clans': 'assets/img/game/coc.jpg',
-      'Honor of Kings': 'assets/img/game/hok.jpg'
-    };
-    return images[name] || 'assets/img/game/default.jpg';
+  fetchGames() {
+    this.playservice.getGames().subscribe(response => {
+      console.log('API Response:', response); // Debugging
+      if (response.result === 'OK') {
+        // Gunakan imgPath langsung dari database
+        this.games = response.data;
+        console.log('Games:', this.games); // Debugging
+        this.isLoading = false;
+      } else {
+        this.errorMessage = 'No games available.';
+        this.isLoading = false;
+      }
+    },
+      error => {
+        console.error('Error fetching games:', error);
+        this.errorMessage = 'Failed to load games.';
+        this.isLoading = false;
+      });
   }
 }
