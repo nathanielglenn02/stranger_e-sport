@@ -10,15 +10,16 @@ export class AuthserviceService {
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string) {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    const body = new URLSearchParams();
-    body.set('username', username);
-    body.set('password', password);
-    const urlEncodedData = body.toString();
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = {
+      username: username,
+      password: password
+    };
     return this.http.post(
-      "https://ubaya.xyz/hybrid/160822004/project/login.php", urlEncodedData, { headers });
+      "https://ubaya.xyz/hybrid/160822004/project/login.php", body, { headers });
+
   }
-  
+
   read_proposal(idmember?: number): Observable<any> {
     return this.http.get("https://ubaya.xyz/hybrid/160822004/project/read_proposal.php?idmember=" + idmember);
   }

@@ -13,6 +13,7 @@ export class HomePage {
   username = ""
   password = ""
   fullname = ""
+  imgPath = ""
 
   constructor(private router: Router) {
     this.username = localStorage.getItem("project_username") ?? "";
@@ -26,6 +27,7 @@ export class HomePage {
 
   private checkLogin(): void {
     this.fullname = localStorage.getItem("project_fullname") ?? "";
+    this.imgPath = localStorage.getItem('project_imgPath') || '../../assets/img/default.jpg'; // Gambar default
     if (!this.fullname) {
       this.router.navigate(['/login'], { replaceUrl: true });
     }
@@ -38,7 +40,7 @@ export class HomePage {
     localStorage.removeItem("project_fullname")
     this.checkLogin();
   }
-  
+
   ionViewWillEnter() {
     this.checkLogin();
   }

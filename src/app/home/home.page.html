@@ -8,15 +8,15 @@
     <ion-item lines="none">
       <ion-label color="light">
         <p>Stranger E-Sport</p>
-        
+
         <div>
           <ion-icon name="locate-outline"></ion-icon>
           <ion-text>Hello {{ fullname }}</ion-text>
         </div>
-        
+
       </ion-label>
       <ion-avatar slot="end">
-        <ion-img src="../../assets/img/Ariel.JPG"></ion-img>
+        <ion-img [src]="imgPath"></ion-img>
       </ion-avatar>
     </ion-item>
   </ion-toolbar>
