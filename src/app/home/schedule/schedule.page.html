@@ -12,16 +12,19 @@
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let schedule of schedules; let i=index" lines="none">
-    <ion-card class="schedule-card" routerLink="/schedule_detail/{{i}}">
-      <img [src]="schedule.image" alt="{{ schedule.title }}" />
+  <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+  <ion-item *ngIf="!isLoading && errorMessage" lines="none">
+    <ion-label>{{ errorMessage }}</ion-label>
+  </ion-item>
+
+  <ion-item *ngFor="let schedule of schedules" lines="none">
+    <ion-card class="schedule-card" (click)="goToDetail(schedule.idevent)">
+      <img [src]="schedule.imgPath" alt="{{ schedule.name }}" />
       <ion-card-header>
-        <ion-card-title>
-          {{ schedule.title }}</ion-card-title>
+        <ion-card-title>{{ schedule.name }}</ion-card-title>
         <ion-card-subtitle>
           {{ schedule.date | date: 'mediumDate' }} - {{ schedule.time }}
         </ion-card-subtitle>
-        
       </ion-card-header>
       <ion-card-content>
         <p>Game Mode: {{ schedule.gameMode }}</p>

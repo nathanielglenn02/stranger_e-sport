@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ScheduleserviceService, Schedule} from 'src/app/scheduleservice.service';
+import { ScheduleserviceService } from 'src/app/scheduleservice.service';
 
 @Component({
   selector: 'app-schedule-detail',
@@ -9,26 +9,51 @@ import { ScheduleserviceService, Schedule} from 'src/app/scheduleservice.service
 })
 export class ScheduleDetailPage implements OnInit {
 
-  schedules:any[]=[];
-  index:number = 0
+  schedule: any = {};
+  isLoading: boolean = true;
+  isAlertOpen: boolean = false;
+  alertButtons = ['OK'];
 
   constructor(
     private route: ActivatedRoute,
-    private scheduleservice : ScheduleserviceService
+    private scheduleService: ScheduleserviceService
   ) { }
-  isAlertOpen = false;
-  alertButtons = ['Okeeeyy'];
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.index = params['index']
+    const idevent = Number(this.route.snapshot.params['idevent']);
+    console.log('ID Event diterima:', idevent);
+
+    if (isNaN(idevent) || idevent <= 0) {
+      console.error('Error: Event ID is required and must be numeric.');
+      this.isLoading = false;
+      return;
     }
-  )
-    this.schedules= this.scheduleservice.schedules
+
+    this.loadScheduleDetail(idevent);
+  }
+
+  loadScheduleDetail(idevent: number) {
+    console.log('Mengirim ID Event ke API:', idevent);
+
+    this.scheduleService.getScheduleDetail(idevent).subscribe(
+      (response: any) => {
+        console.log('Response dari API:', response);
+
+        if (response.result === 'OK') {
+          this.schedule = response.data || {};
+        } else {
+          console.error('Error:', response.message);
+        }
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error('Error API:', error);
+        this.isLoading = false;
+      }
+    );
   }
 
   setOpen(isOpen: boolean) {
     this.isAlertOpen = isOpen;
   }
-
 }

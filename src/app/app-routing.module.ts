@@ -46,13 +46,13 @@ const routes: Routes = [
     loadChildren: () => import('./home/schedule/schedule.module').then(m => m.SchedulePageModule)
   },
   {
+    path: 'schedule_detail/:idevent',
+    loadChildren: () => import('./home/schedule/schedule-detail/schedule-detail.module').then(m => m.ScheduleDetailPageModule)
+  },
+  {
     path: 'welcome',
     loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomePageModule)
   },
-  {
-    path: 'schedule_detail/:index',
-    loadChildren: () => import('./home/schedule/schedule-detail/schedule-detail.module').then(m => m.ScheduleDetailPageModule)
-  }
 ];
 
 @NgModule({
