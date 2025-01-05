@@ -23,7 +23,15 @@
       <ion-input [(ngModel)]="password" type="password" label="Password" labelPlacement="floating"
         placeholder="Enter password" class="large-input"></ion-input>
     </ion-item>
-    <ion-button expand="block" (click)="register()">Register</ion-button>
+    <ion-item class="custom-item">
+      <ion-input [(ngModel)]="confirmPassword" type="password" label="Repeat Password" labelPlacement="floating"
+        placeholder="Repeat password" class="large-input"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-checkbox [(ngModel)]="agreeTerms" slot="start"></ion-checkbox>
+      <ion-label>I agree with terms and conditions</ion-label>
+    </ion-item>
+    <ion-button expand="block" (click)="register()" [disabled]="!canSubmit()">Register</ion-button>
   </ion-card>
 
   <div class="reg-link">

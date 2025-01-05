@@ -22,8 +22,21 @@ $profile = 'member';
 $imgPath = 'assets/img/default.jpg';
 $role = ''; // Kosongkan
 
+// Validasi input
 if ($fname == '' || $lname == '' || $username == '' || $password == '') {
     echo json_encode(['result' => 'ERROR', 'message' => 'Semua kolom harus diisi']);
+    die();
+}
+
+// Cek apakah username sudah ada
+$checkUserSql = "SELECT * FROM member WHERE username = ?";
+$checkStmt = $conn->prepare($checkUserSql);
+$checkStmt->bind_param("s", $username);
+$checkStmt->execute();
+$checkResult = $checkStmt->get_result();
+
+if ($checkResult->num_rows > 0) {
+    echo json_encode(['result' => 'ERROR', 'message' => 'Username sudah digunakan']);
     die();
 }
 

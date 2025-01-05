@@ -13,14 +13,28 @@ export class RegisterPage implements OnInit {
   lname = "";
   username = "";
   password = "";
+  confirmPassword = "";
+  agreeTerms = false;
 
   constructor(private authservice: AuthserviceService, private router: Router) { }
 
   ngOnInit() { }
 
+  canSubmit(): boolean {
+    return (
+      !!this.fname &&
+      !!this.lname &&
+      !!this.username &&
+      !!this.password &&
+      this.password === this.confirmPassword &&
+      this.agreeTerms
+    );
+  }
+
+
   register() {
-    if (!this.fname || !this.lname || !this.username || !this.password) {
-      alert('Semua kolom harus diisi!');
+    if (!this.canSubmit()) {
+      alert('Harap lengkapi semua data dan setujui syarat serta ketentuan!');
       return;
     }
 
