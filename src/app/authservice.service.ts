@@ -17,7 +17,6 @@ export class AuthserviceService {
     };
     return this.http.post(
       "https://ubaya.xyz/hybrid/160822004/project/login.php", body, { headers });
-
   }
 
   register(fname: string, lname: string, username: string, password: string) {
@@ -35,8 +34,6 @@ export class AuthserviceService {
       { headers }
     );
   }
-
-
 
   read_proposal(idmember?: number): Observable<any> {
     return this.http.get("https://ubaya.xyz/hybrid/160822004/project/read_proposal.php?idmember=" + idmember);

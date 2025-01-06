@@ -41,7 +41,7 @@ export class RegisterPage implements OnInit {
     this.authservice.register(this.fname, this.lname, this.username, this.password).subscribe(
       (response: any) => {
         if (response.result === 'OK') {
-          alert('Registrasi berhasil! Silakan login.');
+          alert('Registrasi berhasil! Silakan login.'); 
           this.router.navigate(['/login']);
         } else {
           alert(response.message);
