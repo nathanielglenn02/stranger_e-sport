@@ -31,7 +31,6 @@ export interface Game {
   achievements?: Achievement[];
 }
 
-
 @Injectable({
   providedIn: 'root'
 })

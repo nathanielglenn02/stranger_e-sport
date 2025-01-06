@@ -40,7 +40,7 @@ $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
 $sql = "INSERT INTO member (fname, lname, username, password, profile, imgPath, role) 
         VALUES (?, ?, ?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
+$stmt = $conn->prepare($sql);   
 $stmt->bind_param("sssssss", $fname, $lname, $username, $hashedPassword, $profile, $imgPath, $role);
 
 if ($stmt->execute()) {

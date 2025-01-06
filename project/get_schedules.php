@@ -7,13 +7,11 @@ $username = "hybrid_160822004";
 $password = "ubaya";
 $dbname = "hybrid_160822004";
 
-// Koneksi database
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Query untuk mendapatkan semua event
 $sql = "SELECT * FROM event";
 $result = $conn->query($sql);
 

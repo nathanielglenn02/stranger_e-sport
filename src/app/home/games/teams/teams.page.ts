@@ -9,7 +9,6 @@ import { PlayserviceService, Team } from '../../../playservice.service';
 })
 export class TeamsPage implements OnInit {
 
-  // Variabel
   idgame: number = 0;
   teams: Team[] = [];
   isLoading: boolean = true;

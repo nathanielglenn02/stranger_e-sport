@@ -34,6 +34,4 @@ export class ScheduleserviceService {
     console.log('Body yang dikirim ke API:', urlEncodedData);
     return this.http.post(this.baseUrl + "get_schedule_detail.php", urlEncodedData, { headers });
   }
-
-
 }

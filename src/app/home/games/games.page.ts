@@ -24,11 +24,10 @@ export class GamesPage implements OnInit {
 
   fetchGames() {
     this.playservice.getGames().subscribe(response => {
-      console.log('API Response:', response); // Debugging
+      console.log('API Response:', response); 
       if (response.result === 'OK') {
-        // Gunakan imgPath langsung dari database
         this.games = response.data;
-        console.log('Games:', this.games); // Debugging
+        console.log('Games:', this.games);
         this.isLoading = false;
       } else {
         this.errorMessage = 'No games available.';
