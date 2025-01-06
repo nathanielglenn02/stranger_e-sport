@@ -27,9 +27,10 @@ export class HomePage {
 
   private checkLogin(): void {
     this.fullname = localStorage.getItem("project_fullname") ?? "";
-    this.imgPath = localStorage.getItem('project_imgPath') || '../../assets/img/default.jpg'; // Gambar default
+    this.imgPath = localStorage.getItem('project_imgPath') || 'https://ubaya.xyz/hybrid/160822004/assets/img/default.jpg'; // Gambar default
+    console.log(this.imgPath)
     if (!this.fullname) {
-      this.router.navigate(['/login'], { replaceUrl: true });
+      this.router.navigate(['/login'], { replaceUrl: true }); 
     }
   }
 

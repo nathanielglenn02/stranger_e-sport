@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
 
           this.fullname = `${userData.fname} ${userData.lname}`;
           this.idmember = `${userData.idmember}`;
-          const imgPath = 'https://ubaya.xyz/hybrid/160822004/' + userData.imgPath;
+          const imgPath =  userData.imgPath;
 
           alert(`Login successful! Welcome, ${this.fullname}`);
 
@@ -64,5 +64,4 @@ export class LoginPage implements OnInit {
       }
     );
   }
-
 }
