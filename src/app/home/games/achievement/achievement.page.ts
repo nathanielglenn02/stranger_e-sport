@@ -27,7 +27,7 @@ export class AchievementPage implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.idgame = +params['idgame'];
-      console.log('ID Game:', this.idgame); 
+      console.log('ID Game:', this.idgame);
       if (isNaN(this.idgame) || this.idgame <= 0) {
         console.error('ID Game tidak valid:', this.idgame);
         this.errorMessage = 'Invalid Game ID.';
@@ -35,13 +35,13 @@ export class AchievementPage implements OnInit {
         return;
       }
       this.fetchAchievements();
-      this.fetchGameDetails();
+      // this.fetchGameDetails();
     });
   }
 
   ionViewWillEnter() {
     this.fetchAchievements();
-    this.fetchGameDetails();
+    // this.fetchGameDetails();
   }
 
   fetchAchievements() {
@@ -71,27 +71,27 @@ export class AchievementPage implements OnInit {
     );
   }
 
-  fetchGameDetails() {
-    this.playService.getGames().subscribe(
-      response => {
-        console.log('Game Response:', response);
-        if (response.result === 'OK') {
-          this.selectedGame = response.data.find(
-            (game: Game) => Number(game.idgame) === this.idgame
-          );
-          console.log('Selected Game:', this.selectedGame);
-        }
-      },
-      error => {
-        console.error('Error fetching game details:', error);
-        this.selectedGame = undefined;
-      }
-    );
-  }
+  // fetchGameDetails() {
+  //   this.playService.getGames().subscribe(
+  //     response => {
+  //       console.log('Game Response:', response);
+  //       if (response.result === 'OK') {
+  //         this.selectedGame = response.data.find(
+  //           (game: Game) => Number(game.idgame) === this.idgame
+  //         );
+  //         console.log('Selected Game:', this.selectedGame);
+  //       }
+  //     },
+  //     error => {
+  //       console.error('Error fetching game details:', error);
+  //       this.selectedGame = undefined;
+  //     }
+  //   );
+  // }
 
   getDistinctYears(): string[] {
     const years = this.arrayAchievement.map(achievement => achievement.year);
-    return Array.from(new Set(years)); 
+    return Array.from(new Set(years));
   }
 
   getFilteredAchievements(): Achievement[] {

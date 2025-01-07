@@ -59,10 +59,10 @@ export class PlayserviceService {
     return this.http.post(this.baseUrl + 'get_team_members.php', { idteam });
   }
 
-  getFullGameData(idgame: number): Observable<any> {
-    return forkJoin({
-      teams: this.getTeams(idgame),
-      achievements: this.getAchievements(idgame)
-    });
-  }
+  // getFullGameData(idgame: number): Observable<any> {
+  //   return forkJoin({
+  //     teams: this.getTeams(idgame),
+  //     achievements: this.getAchievements(idgame)
+  //   });
+  // }
 }
